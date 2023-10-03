@@ -1,0 +1,25 @@
+.actionButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Anton";
+  text-transform: uppercase;
+  line-height: 16px;
+  gap: 10px;
+  position: relative;
+  &:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      right: 20px;
+      bottom: 0px;
+      width: 100%;
+      height: 6px;
+      background-image: url("/underline.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}

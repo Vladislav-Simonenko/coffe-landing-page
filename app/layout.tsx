@@ -1,5 +1,6 @@
 import { Footer, Header } from "@/components/organisms";
 import { Container } from "@/components/atoms";
+
 import type { Metadata } from "next";
 import Head from "next/head";
 

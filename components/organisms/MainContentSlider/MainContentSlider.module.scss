@@ -1,0 +1,83 @@
+.sliderContainer {
+  .sliderContent {
+    display: flex;
+
+    .sliderImage {
+      flex: 0 0 60%;
+      height: 950px;
+      > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .sliderTextBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/images/slider-background.png");
+    width: 100%;
+    cursor: default;
+    .sliderText {
+      display: flex;
+      flex-direction: column;
+      font-size: 120px;
+      font-family: "Anton";
+      text-transform: uppercase;
+      position: relative;
+      .sliderSeal {
+        position: absolute;
+        right: 0;
+        top: -80px;
+      }
+      .sliderSubText {
+        font-family: "Kaushan Script", cursive;
+        font-size: 60px;
+        position: absolute;
+        right: 0;
+        bottom: -80px;
+        rotate: (-5deg);
+      }
+    }
+  }
+  :global(.swiper-button-prev) {
+    position: absolute;
+    z-index: 2;
+    top: 50% !important;
+    width: 85px !important;
+    height: 65px !important;
+    cursor: pointer;
+    background-color: #fbed81;
+    font-size: 10px !important;
+    color: #fbed81 !important;
+    background-image: url("/slider-arrow.svg");
+    background-repeat: no-repeat;
+    rotate: (180deg);
+    background-position: 50%;
+    &:hover {
+      background-color: #fde637;
+    }
+  }
+
+  :global(.swiper-button-next) {
+    position: absolute;
+    z-index: 2;
+    top: 50% !important;
+    right: 0;
+    width: 85px !important;
+    height: 65px !important;
+    cursor: pointer;
+    background-color: #fbed81;
+    font-size: 10px !important;
+    color: #fbed81 !important;
+    background-image: url("/slider-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    &:hover {
+      background-color: #fde637;
+    }
+  }
+}

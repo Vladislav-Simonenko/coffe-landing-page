@@ -1,0 +1,29 @@
+.headerMenuLinks {
+  display: flex;
+  justify-content: space-between;
+  font-family: Space Mono;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  gap: 40px;
+
+  .headerLink {
+    position: relative;
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        bottom: -5px;
+        width: 65px;
+        height: 6px;
+        background-image: url("/underline.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
+}

@@ -1,62 +1,21 @@
 .header {
   position: relative;
-  margin-bottom: 92px;
   z-index: 1500;
   display: block;
-  .headerTopBlackContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    background-color: black;
-    .headerTopText {
-      color: white;
-      font-family: Space Mono;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 14px;
-      letter-spacing: 0em;
-      text-align: left;
-    }
-  }
+  box-shadow: 0px 1px 0px 0px rgba(34, 60, 80, 0.5);
 
   .headerMenuContainer {
     display: flex;
     min-height: 100px;
     color: black;
     background-color: white;
+
     .headerMenuContent {
       width: 100%;
-      margin: 0 40px;
+      margin-left: 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .headerMenuLinks {
-        display: flex;
-        justify-content: space-between;
-        font-family: Space Mono;
-        font-size: 17px;
-        font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0em;
-        text-align: left;
-        gap: 40px;
-        .headerLink {
-          position: relative;
-          &:hover {
-            &::after {
-              content: "";
-              position: absolute;
-              left: -5px;
-              bottom: -5px;
-              width: 65px;
-              height: 6px;
-              background-image: url("/underline.svg");
-              background-repeat: no-repeat;
-            }
-          }
-        }
-      }
     }
   }
 }
