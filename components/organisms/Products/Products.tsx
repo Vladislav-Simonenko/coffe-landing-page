@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "./Products.module.scss";
-import { ActionButton } from "@/components/atoms";
+import { ActionButton, ProductCard } from "@/components/atoms";
 import arrow from "public/slider-arrow.svg";
-import product1 from "public/images/product-1.png";
-import product2 from "public/images/product-2.png";
-import Image from "next/image";
 
-//@FIXME need refactor
 export const Products = () => {
   return (
     <div className={styles.productListContainer}>
@@ -26,11 +22,7 @@ export const Products = () => {
           <ActionButton text={"view more"} img={arrow} />
         </div>
         {coffeData.map((item) => (
-          <div key={item.id} className={styles.productListPopular}>
-            <Image className={styles.productImage} src={item.img} alt={""} />
-            <p className={styles.productName}>{item.name}</p>
-            <p className={styles.productPrice}>{item.price}</p>
-          </div>
+          <ProductCard item={item} />
         ))}
       </div>
     </div>
@@ -40,14 +32,18 @@ export const Products = () => {
 const coffeData = [
   {
     id: 1,
-    img: product1,
+    img: "/images/product-1.png",
     name: "Arabica Bekele",
     price: "$44.00",
+    text: "",
+    label: false,
   },
   {
     id: 2,
-    img: product2,
+    img: "/images/product-2.png",
     name: "Robusta Santa",
     price: "$35.00",
+    text: "",
+    label: false,
   },
 ];

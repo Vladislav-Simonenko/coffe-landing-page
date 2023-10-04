@@ -1,0 +1,55 @@
+.contactsContainer {
+  position: relative; /* Добавляем относительное позиционирование */
+  .contactsContent {
+  }
+}
+
+.horizontalTable {
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    white-space: nowrap;
+  }
+
+  th {
+    position: absolute;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+    font-weight: bold;
+  }
+
+  .insideContainer {
+    rotate: 90deg;
+    border-top: 1px solid #eee;
+  }
+
+  tr {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  th,
+  td {
+    flex: 1;
+  }
+}
+
+.columnName {
+  font-family: "Anton";
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 60px;
+}
+.infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .infoImage {
+  }
+  .embeddedInformationInfo {
+  }
+}

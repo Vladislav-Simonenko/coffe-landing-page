@@ -1,0 +1,20 @@
+.rating {
+  display: flex;
+  .halfStarContainer {
+    text-align: start;
+    position: relative;
+    width: 25px;
+    .halfStar {
+      width: 25px;
+      height: 25px;
+    }
+    .halfStarWhiteBlock {
+      position: absolute;
+      width: 20.5px;
+      height: 30.5px;
+      background-color: white;
+      top: 1px;
+      left: 55%;
+    }
+  }
+}

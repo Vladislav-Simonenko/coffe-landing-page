@@ -1,0 +1,22 @@
+.menuItemContainer {
+  border-bottom: 1px solid black;
+  padding: 50px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .menuItemContant {
+    .menuItemTitle {
+      font-family: "Anton";
+      font-size: 35px;
+      line-height: 45px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .menuItemDesc {
+      font-family: Space Mono;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
