@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./FoodMenu.module.scss";
+import styles from "./ItemMenu.module.scss";
 import Image from "next/image";
 import { MenuItem } from "@/components/molecules";
 
-export const FoodMenu = () => {
+export const ItemMenu = () => {
   return (
     <div className={styles.foodMenuContainer}>
       <div className={styles.foodMenuContent}>

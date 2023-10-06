@@ -7,6 +7,7 @@
   line-height: 16px;
   gap: 10px;
   position: relative;
+
   &:hover {
     &::after {
       content: "";
@@ -21,5 +22,27 @@
       background-repeat: no-repeat;
       background-position: center center;
     }
+  }
+}
+
+.actionBlackButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: "Anton";
+  font-size: 17px;
+  line-height: 17px;
+  color: white;
+  width: 165px;
+  height: 60px;
+  background-image: url("/button-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &:hover {
+    background-size: 120%;
+    font-size: 20px;
   }
 }

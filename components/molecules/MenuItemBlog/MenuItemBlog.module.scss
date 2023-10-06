@@ -1,0 +1,81 @@
+.menuItemContainer {
+  border-bottom: 1px solid black;
+  padding: 50px 60px;
+  display: flex;
+
+  .menuItemImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-right: 55px;
+  }
+
+  .menuItemContent {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .menuItemHeader {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      font-family: Space Mono;
+      font-size: 18px;
+      line-height: 24px;
+
+      .menuItemHeaderInfo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 15px;
+
+        .menuItemDate {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+
+        .menuItemType {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+      }
+    }
+
+    .menuItemTitle {
+      font-family: "Anton";
+      font-size: 35px;
+      line-height: 45px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+  }
+}

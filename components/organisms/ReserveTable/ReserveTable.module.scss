@@ -1,4 +1,40 @@
 .reserveContainer {
-  height: 466px;
   background-image: url("/images/slider-background.png");
+
+  .reserveContent {
+    height: 466px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .reserveTitle {
+      font-family: "Anton";
+      text-transform: uppercase;
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .reserveDescriprion {
+      font-family: "Space Mono", monospace;
+      font-size: 18px;
+      position: relative;
+      background-color: white;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        right: 20px;
+        bottom: -5px;
+        width: 100%;
+        height: 6px;
+        background-image: url("/underline.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
 }

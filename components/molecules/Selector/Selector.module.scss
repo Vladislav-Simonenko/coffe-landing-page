@@ -1,0 +1,21 @@
+.selectorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  .inputStyles {
+    height: 41px;
+    border-bottom: 1px solid black;
+    background-color: white;
+    font-family: "Space Mono", monospace;
+    text-transform: lowercase;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 960px) {
+  .selectorContainer {
+    flex-direction: column;
+  }
+}

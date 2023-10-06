@@ -1,0 +1,41 @@
+.selectContainer {
+  appearance: none;
+  background: transparent;
+  padding-right: 20px;
+  position: relative;
+
+  &::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  &:active {
+    &::after {
+      content: "▲"; /* Изменяем символ на стрелку вверх при активации */
+    }
+  }
+
+  .selectContent {
+    appearance: none;
+    background: transparent;
+    padding-right: 20px;
+    height: 41px;
+    border-bottom: 1px solid black;
+    background-color: white;
+    font-family: "Space Mono", monospace;
+    text-transform: lowercase;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .optionContainer {
+    font-family: "Space Mono", monospace;
+    text-transform: lowercase;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

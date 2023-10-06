@@ -1,0 +1,42 @@
+.foodMenuContainer {
+  background-color: #fdf1d9;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  .foodMenuContent {
+    display: flex;
+    justify-content: center;
+
+    .foodMenuCover {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 50px 60px;
+      flex: 1 1 40%;
+      border-right: 1px solid black;
+
+      .foodMenuText {
+        font-family: "Anton";
+        font-size: 70px;
+        line-height: 80px;
+        text-transform: uppercase;
+
+        .foodMenuCircle {
+          background-image: url("/images/circle.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100% 100%;
+        }
+      }
+
+      .foodMenuImage {
+        width: 315px;
+        height: 237px;
+      }
+    }
+
+    .foodMenuProposal {
+      flex: 1 1 60%;
+    }
+  }
+}
