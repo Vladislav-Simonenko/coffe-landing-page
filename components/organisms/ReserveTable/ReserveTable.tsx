@@ -12,19 +12,23 @@ export const ReserveTable = () => {
   ) => {
     setReservation(newReservation);
   };
-
+  //@FIXME need fix reserv
   return (
     <div className={styles.reserveContainer}>
       <div className={styles.reserveContent}>
         <p className={styles.reserveTitle}>Reserve you table</p>
+
         <Selector onReservationChange={handleReservationChange} />
+
         {reservation && (
           <p className={styles.reserveDescriprion}>
-            the table was booked on{" "}
+            the table was booked on {/* @ts-ignore */}
             {reservation?.date +
               " " +
+              //  @ts-ignore
               reservation?.time +
               ", for " +
+              //  @ts-ignore
               reservation?.numberOfPeople +
               " person "}
           </p>
