@@ -1,11 +1,156 @@
-.footer {
+.footerContainer {
   border-radius: 120px 0px 0px 0px;
   display: flex;
   flex-direction: column;
+
+  .footerContent {
+    padding: 70px;
+    display: flex;
+    justify-content: space-between;
+    .footerLocationBlock {
+      display: flex;
+      gap: 40px;
+
+      .footerLocationImageContainer {
+        width: 100px;
+        height: 100px;
+
+        .footerLocationImage {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .footerLocationText {
+        font-family: "Space Mono", monospace;
+        font-size: 16px;
+        line-height: 28px;
+
+        .footerLocationTitle {
+          font-family: "Anton";
+          font-size: 30px;
+          line-height: 40px;
+          letter-spacing: 0.6px;
+          margin-bottom: 10px;
+        }
+
+        .footerLocationDistrict {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 20px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+
+        .footerLocationCity {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 20px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: 30%;
+            background-repeat: no-repeat;
+            background-position: 0%;
+          }
+        }
+
+        .footerLocationPhone {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 20px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: 0%;
+          }
+        }
+      }
+    }
+
+    .footerLocationMenu {
+      font-family: "Space Mono", monospace;
+      font-size: 16px;
+      line-height: 28px;
+      > p {
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 20px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: -10%;
+          }
+        }
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+    .footerLocationSocial {
+      font-family: "Space Mono", monospace;
+      font-size: 16px;
+      line-height: 28px;
+
+      > p {
+        position: relative;
+
+        &:hover {
+          cursor: pointer;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            right: 20px;
+            bottom: -5px;
+            width: 100%;
+            height: 6px;
+            background-image: url("/underline.svg");
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: -10%;
+          }
+        }
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 500px) {
-  .footer {
+  .footerContainer {
     padding: 0px 60px;
   }
 }

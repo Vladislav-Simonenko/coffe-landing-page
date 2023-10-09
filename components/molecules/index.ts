@@ -7,3 +7,4 @@ export * from "./RatingStarsCounter";
 export * from "./MenuItem";
 export * from "./Selector";
 export * from "./MenuItemBlog";
+export * from "./CoffeItem";

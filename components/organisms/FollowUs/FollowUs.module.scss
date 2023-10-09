@@ -1,0 +1,19 @@
+.followUsContainer {
+  border-bottom: 1px solid rgba(34, 60, 80, 0.5);
+
+  .followUsContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+    row-gap: 50px;
+
+    .followUsImageContainer {
+      border-radius: 10px;
+      width: calc(20% - 20px);
+      .followUsImage {
+        border-radius: 10px;
+      }
+    }
+  }
+}

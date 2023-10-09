@@ -1,0 +1,57 @@
+.coffeItemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 165px;
+
+  .coffeItemContant {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .coffeItemLeftSideBlock {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 35px;
+
+    .coffeItemTitle {
+      font-family: "Anton";
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.8px;
+      margin-bottom: 15px;
+      position: relative;
+      white-space: nowrap;
+
+      &::after {
+        content: "................";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        font-family: "Anton";
+        margin-left: 10px;
+        letter-spacing: 2px;
+      }
+    }
+
+    .coffeItemDescription {
+      font-family: "Space Mono", monospace;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .CoffeItemRightSideBlock {
+    .coffeItemPrice {
+      font-family: "Space Mono", monospace;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.72px;
+    }
+  }
+}

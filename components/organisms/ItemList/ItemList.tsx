@@ -10,6 +10,7 @@ interface IDataProps {
     price: string;
     text: string;
     label?: boolean | undefined;
+    onlyImage?: boolean;
   }[];
 }
 

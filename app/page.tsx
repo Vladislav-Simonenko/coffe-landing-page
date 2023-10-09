@@ -8,7 +8,10 @@ import {
   Rating,
   ReserveTable,
   BlogMenu,
+  CoffeMenuList,
+  FollowUs,
 } from "@/components/organisms";
+import GreenBlog from "@/components/organisms/GreenBlog/GreenBlog";
 import React from "react";
 
 export default function Home() {
@@ -27,6 +30,12 @@ export default function Home() {
       <TextDivider text={"Our awesome team"} />
       <ItemList data={teamData} />
       <BlogMenu />
+      <GreenBlog />
+      <TextDivider text={"Our trusted Supplies"} />
+      <ItemList data={suppliesData} />
+      <CoffeMenuList />
+      <TextDivider text={"Follow us for more"} />
+      <FollowUs />
     </React.Fragment>
   );
 }
@@ -123,7 +132,7 @@ const teamData = [
     id: 5,
     img: "/images/team-1.png",
     name: "Uma Clark",
-    price: "$37.00",
+    price: "Manager",
     text: "",
     label: false,
   },
@@ -134,5 +143,53 @@ const teamData = [
     price: "Sales person",
     text: "",
     label: false,
+  },
+];
+
+const suppliesData = [
+  {
+    id: 1,
+    img: "/supplies-1.svg",
+    name: "",
+    price: "",
+    text: "",
+    label: false,
+    onlyImage: true,
+  },
+  {
+    id: 2,
+    img: "/supplies-2.svg",
+    name: "",
+    price: "",
+    text: "",
+    label: false,
+    onlyImage: true,
+  },
+  {
+    id: 3,
+    img: "/supplies-3.svg",
+    name: "",
+    price: "",
+    text: "",
+    label: false,
+    onlyImage: true,
+  },
+  {
+    id: 4,
+    img: "/supplies-4.svg",
+    name: "",
+    price: "",
+    text: "",
+    label: false,
+    onlyImage: true,
+  },
+  {
+    id: 5,
+    img: "/supplies-5.svg",
+    name: "",
+    price: "",
+    text: "",
+    label: false,
+    onlyImage: true,
   },
 ];

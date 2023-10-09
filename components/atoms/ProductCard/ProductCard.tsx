@@ -10,6 +10,7 @@ interface IProductCard {
     price: string;
     text: string;
     label?: boolean;
+    onlyImage?: boolean;
   };
 }
 
@@ -18,13 +19,18 @@ export const ProductCard = (props: IProductCard) => {
 
   return (
     <div key={item?.id} className={styles.productListPopular}>
-      <Image
-        className={styles.productImage}
-        src={item?.img}
-        alt={item?.name}
-        width={1920}
-        height={1080}
-      />
+      <div className={styles.productImageContainer}>
+        <Image
+          className={
+            item.onlyImage ? styles.productImageOnly : styles.productImage
+          }
+          src={item?.img}
+          alt={item?.name}
+          width={1920}
+          height={82}
+        />
+      </div>
+
       <p className={styles.productName}>{item?.name}</p>
       <p className={styles.productPrice}>{item?.price}</p>
       {item.label ? (
