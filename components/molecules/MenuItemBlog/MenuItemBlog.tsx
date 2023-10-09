@@ -11,7 +11,7 @@ interface IMenuItemProps {
 export const MenuItemBlog = (props: IMenuItemProps) => {
   const { item } = props;
   return (
-    <div className={styles.menuItemContainer}>
+    <div key={item.id} className={styles.menuItemContainer}>
       <Image
         className={styles.menuItemImage}
         src={item.img}

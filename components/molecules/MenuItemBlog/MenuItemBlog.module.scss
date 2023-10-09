@@ -84,5 +84,23 @@
   .menuItemContainer {
     display: flex;
     flex-direction: column;
+    .menuItemImage {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .menuItemContainer {
+    border-bottom: 1px solid black;
+    padding: 50px 60px;
+    display: flex;
+
+    .menuItemContent {
+      .menuItemTitle {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
   }
 }

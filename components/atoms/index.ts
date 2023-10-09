@@ -6,3 +6,4 @@ export * from "./Banner";
 export * from "./TextDivider";
 export * from "./ProductCard";
 export * from "./Select";
+export * from "./BurgerMenu";

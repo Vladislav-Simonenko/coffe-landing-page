@@ -1,7 +1,6 @@
 .productListContainer {
   background-color: #fdf1d9;
   .productListContant {
-    height: 584px;
     display: flex;
 
     .productListInfo {
@@ -32,6 +31,53 @@
         font-size: 18px;
         line-height: 24px;
         margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .productListContainer {
+    .productListContant {
+      flex-direction: column;
+      .productListInfo {
+        margin: 60px;
+
+        .infoTitle {
+          font-size: 32px;
+          line-height: 40px;
+          margin-bottom: 25px;
+
+          .infoTitleCircle {
+            background-image: url("/images/circle.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+          }
+        }
+
+        .infoDescription {
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .productListContainer {
+    .productListContant {
+      .productListInfo {
+        .infoTitle {
+          font-size: 18px;
+          line-height: 30px;
+          margin-bottom: 25px;
+        }
+        .infoDescription {
+          font-size: 16px;
+        }
       }
     }
   }

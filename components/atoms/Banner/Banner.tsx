@@ -15,7 +15,7 @@ export const Banner = (props: IBannerProps) => {
       <Image
         className={styles.bannerImage}
         width={1920}
-        height={752}
+        height={1080}
         src={img}
         alt={""}
       />

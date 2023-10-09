@@ -55,3 +55,21 @@
     }
   }
 }
+
+@media (max-width: 1250px) {
+  .coffeItemContainer {
+    padding: 85px;
+  }
+}
+
+@media (max-width: 960px) {
+  .coffeItemContainer {
+    padding: 65px;
+  }
+}
+
+@media (max-width: 450px) {
+  .coffeItemContainer {
+    padding: 20px;
+  }
+}

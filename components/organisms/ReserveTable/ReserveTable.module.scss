@@ -38,3 +38,23 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .reserveContainer {
+    .reserveContent {
+      .reserveTitle {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .reserveContainer {
+    .reserveContent {
+      .reserveTitle {
+        font-size: 30px;
+      }
+    }
+  }
+}

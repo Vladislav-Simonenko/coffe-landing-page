@@ -5,3 +5,9 @@
   flex-direction: row;
   flex: 1 1 50%;
 }
+
+@media (max-width: 960px) {
+  .productListContent {
+    display: block;
+  }
+}

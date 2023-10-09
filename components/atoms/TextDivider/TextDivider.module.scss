@@ -12,3 +12,39 @@
     text-transform: uppercase;
   }
 }
+
+@media (max-width: 960px) {
+  .dividerContainer {
+    justify-content: center;
+    .dividerText {
+      font-size: 50px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .dividerContainer {
+    .dividerText {
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .dividerContainer {
+    .dividerText {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .dividerContainer {
+    height: 50px;
+    .dividerText {
+      margin: 0;
+      font-size: 20px;
+      line-height: 40px;
+    }
+  }
+}

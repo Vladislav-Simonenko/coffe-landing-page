@@ -65,3 +65,24 @@
     }
   }
 }
+
+@media (max-width: 1325px) {
+  .productListPopular {
+    padding: 10px;
+
+    .productImageContainer {
+      margin-bottom: 0px;
+    }
+    .productName {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .productListPopular {
+    align-items: center;
+    border-top: 1px solid rgba(34, 60, 80, 0.5);
+    border-bottom: 1px solid rgba(34, 60, 80, 0.5);
+  }
+}

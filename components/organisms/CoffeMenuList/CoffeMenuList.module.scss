@@ -35,3 +35,38 @@
     }
   }
 }
+
+@media (max-width: 1250px) {
+  .coffeMenuContainer {
+    .coffeMenuContant {
+      display: flex;
+      flex-direction: column-reverse;
+      border-bottom: 1px solid rgba(34, 60, 80, 0.5);
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .coffeMenuContainer {
+    .coffeMenuContant {
+      .coffeMenuImageContainer {
+        .coffeMenuImageText {
+          font-size: 80px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .coffeMenuContainer {
+    .coffeMenuContant {
+      .coffeMenuImageContainer {
+        .coffeMenuImageText {
+          font-size: 60px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+}

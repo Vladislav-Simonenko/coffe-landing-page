@@ -40,3 +40,25 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .foodMenuContainer {
+    .foodMenuContent {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .foodMenuCover {
+        flex-direction: column;
+        padding: 10px 60px;
+        border-bottom: 1px solid black;
+
+        .foodMenuText {
+          width: 100%;
+          font-size: 40px;
+          line-height: 50px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

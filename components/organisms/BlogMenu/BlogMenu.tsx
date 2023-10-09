@@ -9,7 +9,7 @@ export const BlogMenu = () => {
       <div className={styles.foodMenuContent}>
         <div className={styles.foodMenuCover}>
           <p className={styles.foodMenuText}>
-            Recent blog <br /> posts Explore
+            Recent blog posts Explore
             <span className={styles.foodMenuCircle}> now. </span>
           </p>
           <ActionButton blackButton text={"Read all news"} />

@@ -5,7 +5,6 @@
   text-align: center;
   position: relative;
   .bannerImage {
-    height: 752px;
     width: 100%;
     > img {
       width: 100%;
@@ -23,5 +22,49 @@
     line-height: 110px;
     font-size: 100px;
     color: white;
+  }
+}
+
+@media (max-width: 1255px) {
+  .bannerContainer {
+    .bannerText {
+      font-size: 80px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .bannerContainer {
+    .bannerText {
+      line-height: 80px;
+      font-size: 60px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .bannerContainer {
+    .bannerText {
+      line-height: 60px;
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .bannerContainer {
+    .bannerText {
+      line-height: 50px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .bannerContainer {
+    .bannerText {
+      line-height: 40px;
+      font-size: 20px;
+    }
   }
 }

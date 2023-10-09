@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "hamburger-react": "^2.5.0",
     "next": "latest",
     "node-sass": "^9.0.0",
     "react": "latest",

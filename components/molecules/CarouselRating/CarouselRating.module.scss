@@ -18,3 +18,11 @@
     background-color: black;
   }
 }
+
+@media (max-width: 960px) {
+  .swiper {
+    :global(.swiper-pagination) {
+      height: 10%;
+    }
+  }
+}

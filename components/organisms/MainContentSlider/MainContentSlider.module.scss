@@ -35,10 +35,12 @@
         top: -80px;
       }
       .sliderSubText {
+        width: 100%;
         font-family: "Kaushan Script", cursive;
         font-size: 60px;
         position: absolute;
         right: 0;
+        left: 50px;
         bottom: -80px;
         rotate: (-5deg);
       }
@@ -79,6 +81,111 @@
     background-position: 50%;
     &:hover {
       background-color: #fde637;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .sliderContainer {
+    .sliderTextBlock {
+      .sliderText {
+        font-size: 100px;
+
+        .sliderSubText {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .sliderContainer {
+    .sliderTextBlock {
+      .sliderText {
+        font-size: 80px;
+
+        .sliderSubText {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .sliderContainer {
+    .sliderContent {
+      .sliderImage {
+        height: 550px;
+      }
+    }
+    .sliderSeal {
+      width: 90px;
+    }
+    .sliderTextBlock {
+      .sliderText {
+        font-size: 60px;
+        .sliderSubText {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .sliderContainer {
+    .sliderContent {
+      .sliderImage {
+        height: 450px;
+      }
+    }
+
+    .sliderTextBlock {
+      .sliderText {
+        width: 100%;
+        font-size: 40px;
+        .sliderSubText {
+          font-size: 20px;
+          bottom: -20px;
+          rotate: (-5deg);
+        }
+      }
+    }
+    :global(.swiper-button-prev) {
+      width: 45px !important;
+      height: 35px !important;
+      background-size: 80%;
+    }
+
+    :global(.swiper-button-next) {
+      width: 45px !important;
+      height: 35px !important;
+      background-size: 80%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .sliderContainer {
+    .sliderContent {
+      .sliderImage {
+        height: 250px;
+      }
+    }
+    .sliderSeal {
+      width: 50px;
+    }
+    .sliderTextBlock {
+      .sliderText {
+        font-size: 20px;
+        .sliderSubText {
+          font-size: 14px;
+          bottom: -20px;
+          rotate: (-5deg);
+        }
+      }
     }
   }
 }

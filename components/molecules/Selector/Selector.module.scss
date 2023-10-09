@@ -16,6 +16,7 @@
 }
 @media (max-width: 960px) {
   .selectorContainer {
+    align-items: flex-start;
     flex-direction: column;
   }
 }

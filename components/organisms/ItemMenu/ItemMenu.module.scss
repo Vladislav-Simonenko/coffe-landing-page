@@ -40,3 +40,91 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .foodMenuContainer {
+    .foodMenuContent {
+      display: flex;
+      flex-direction: column;
+      .foodMenuCover {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border-bottom: 1px solid black;
+
+        .foodMenuText {
+          font-size: 40px;
+          line-height: 80px;
+          text-transform: uppercase;
+
+          .foodMenuCircle {
+            background-image: url("/images/circle.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+          }
+        }
+
+        .foodMenuImage {
+          width: 215px;
+          height: 167px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .foodMenuContainer {
+    .foodMenuContent {
+      .foodMenuCover {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        padding: 10px 50px;
+
+        .foodMenuText {
+          font-size: 30px;
+          line-height: 50px;
+          text-transform: uppercase;
+
+          .foodMenuCircle {
+            background-image: url("/images/circle.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+          }
+        }
+
+        .foodMenuImage {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .foodMenuContainer {
+    .foodMenuContent {
+      .foodMenuCover {
+        .foodMenuText {
+          font-size: 25px;
+          line-height: 40px;
+
+          .foodMenuCircle {
+            background-image: url("/images/circle.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+          }
+        }
+
+        .foodMenuImage {
+          width: 80px;
+        }
+      }
+    }
+  }
+}

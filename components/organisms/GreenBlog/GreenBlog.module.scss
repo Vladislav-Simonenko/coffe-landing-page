@@ -43,3 +43,33 @@
     }
   }
 }
+
+@media (max-width: 960px) {
+  .greenBlogContainer {
+    .greenBlogContent {
+      padding: 50px;
+      flex-direction: column;
+
+      .greenBlogImageContainer {
+        margin-bottom: 30px;
+        .greenBlogImage {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .greenBlogTextContent {
+        margin-left: 0px;
+
+        .greenBlogTitle {
+          margin-bottom: 20px;
+        }
+
+        .greenBlogDescription {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
