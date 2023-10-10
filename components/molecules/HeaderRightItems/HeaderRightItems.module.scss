@@ -65,10 +65,11 @@
   background-color: white;
   border-bottom: 2px solid rgba(157, 157, 157, 0.75);
   margin-top: 40px;
+
   .menuBackgroundBlur {
     backdrop-filter: blur(3px);
     position: fixed;
-    top: 45%;
+    top: 50%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -84,9 +85,10 @@
 
         .link {
           margin: 20px 0;
-          font-size: 24px;
+          font-size: 18px;
           font-weight: 400;
           position: relative;
+
           &:hover {
             &::after {
               content: "";
@@ -107,7 +109,36 @@
   }
 }
 
+@media (max-width: 960px) {
+  .menuContainer {
+    .menuBackgroundBlur {
+      top: 44.9%;
+    }
+  }
+}
+
 @media (max-width: 550px) {
+  .menuContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 40%;
+    position: fixed;
+    top: 35px;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    border-bottom: 2px solid rgba(157, 157, 157, 0.75);
+    margin-top: 40px;
+    .menuBackgroundBlur {
+      top: 50%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
   .headerRightBlock {
     .headerLink {
       .headerIcon {

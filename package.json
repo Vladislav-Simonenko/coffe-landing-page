@@ -12,6 +12,7 @@
     "hamburger-react": "^2.5.0",
     "next": "latest",
     "next-images": "^1.8.5",
+    "next-seo": "^6.1.0",
     "node-sass": "^9.0.0",
     "react": "latest",
     "react-dom": "latest",
