@@ -85,7 +85,27 @@
     display: flex;
     flex-direction: column;
     .menuItemImage {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+    .menuItemHeader {
+      font-size: 11px;
+      line-height: 24px;
+    }
+
+    .menuItemContent {
+      .menuItemHeader {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .menuItemTitle {
+        font-family: "Anton";
+        font-size: 35px;
+        line-height: 45px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        align-self: flex-start;
+      }
     }
   }
 }
@@ -93,7 +113,7 @@
 @media (max-width: 450px) {
   .menuItemContainer {
     border-bottom: 1px solid black;
-    padding: 50px 60px;
+    padding: 10px;
     display: flex;
 
     .menuItemContent {

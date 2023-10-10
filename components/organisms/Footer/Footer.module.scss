@@ -149,3 +149,26 @@
     }
   }
 }
+
+@media (max-width: 405px) {
+  .footerContainer {
+    .footerContent {
+      padding: 10px;
+      .footerLocationBlock {
+        .footerLocationText {
+          font-size: 12px;
+          line-height: 20px;
+        }
+      }
+
+      .footerLocationMenu {
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .footerLocationSocial {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+}

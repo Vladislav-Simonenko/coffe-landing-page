@@ -9,7 +9,7 @@
       align-items: flex-start;
       flex-direction: column;
       flex: 1 1 50%;
-      margin: 80px 0 80px 90px;
+      margin: 80px 90px 80px 90px;
 
       .infoTitle {
         font-family: "Anton";
@@ -70,6 +70,7 @@
   .productListContainer {
     .productListContant {
       .productListInfo {
+        margin: 25px;
         .infoTitle {
           font-size: 18px;
           line-height: 30px;

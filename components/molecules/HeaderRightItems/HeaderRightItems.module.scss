@@ -12,6 +12,10 @@
 
   .headerLink {
     position: relative;
+    .headerIcon {
+      width: 100px;
+      height: 100px;
+    }
 
     &:hover {
       &::after {
@@ -59,14 +63,12 @@
   left: 0;
   z-index: 1;
   background-color: white;
-  border: 2px solid #508dff;
-  border-top: none;
+  border-bottom: 2px solid rgba(157, 157, 157, 0.75);
   margin-top: 40px;
-
   .menuBackgroundBlur {
     backdrop-filter: blur(3px);
     position: fixed;
-    top: 0;
+    top: 45%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -100,6 +102,17 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .headerRightBlock {
+    .headerLink {
+      .headerIcon {
+        width: 60px;
+        height: 60px;
       }
     }
   }

@@ -5,3 +5,13 @@
   margin-top: 140px;
   flex: 1;
 }
+
+@media (max-width: 550px) {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    flex: 1;
+  }
+}

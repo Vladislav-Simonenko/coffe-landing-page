@@ -29,6 +29,7 @@
       font-family: "Anton";
       text-transform: uppercase;
       position: relative;
+      padding-left: 30px;
       .sliderSeal {
         position: absolute;
         right: 0;
@@ -186,6 +187,17 @@
           rotate: (-5deg);
         }
       }
+    }
+    :global(.swiper-button-prev) {
+      width: 25px !important;
+      height: 15px !important;
+      background-size: 80%;
+    }
+
+    :global(.swiper-button-next) {
+      width: 25px !important;
+      height: 15px !important;
+      background-size: 80%;
     }
   }
 }

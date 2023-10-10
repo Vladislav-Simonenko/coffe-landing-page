@@ -27,16 +27,16 @@ export const Footer = () => {
         </div>
 
         <div className={styles.footerLocationMenu}>
-          <p>my account</p>
-          <p>checkout</p>
-          <p>cart</p>
-          <p>shop</p>
+          <p>my account </p>
+          <p>checkout </p>
+          <p>cart </p>
+          <p>shop </p>
         </div>
 
         <div className={styles.footerLocationSocial}>
-          <p>facebook</p>
-          <p>instagram</p>
-          <p>twitter</p>
+          <p>facebook </p>
+          <p>instagram </p>
+          <p>twitter </p>
         </div>
       </div>
     </div>

@@ -17,9 +17,7 @@ export const ReserveTable = () => {
     <div className={styles.reserveContainer}>
       <div className={styles.reserveContent}>
         <p className={styles.reserveTitle}>Reserve you table</p>
-
         <Selector onReservationChange={handleReservationChange} />
-
         {reservation && (
           <p className={styles.reserveDescriprion}>
             the table was booked on {/* @ts-ignore */}

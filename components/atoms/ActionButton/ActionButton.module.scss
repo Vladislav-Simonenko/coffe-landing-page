@@ -46,3 +46,31 @@
     font-size: 20px;
   }
 }
+
+@media (max-width: 960px) {
+  .actionBlackButton {
+    font-size: 14px;
+    line-height: 17px;
+    width: 145px;
+    height: 50px;
+
+    &:hover {
+      background-size: 120%;
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .actionBlackButton {
+    font-size: 12px;
+    line-height: 17px;
+    width: 125px;
+    height: 40px;
+
+    &:hover {
+      background-size: 120%;
+      font-size: 15px;
+    }
+  }
+}

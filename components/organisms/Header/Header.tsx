@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./Header.module.scss";
-import svgLogo from "public/logo-black-1.svg";
 import {
   HeaderLeftItems,
   HeaderRightItems,
@@ -9,26 +8,34 @@ import {
 } from "@/components/molecules";
 import { Logo } from "@/components/atoms";
 import { useResize } from "@/libs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const { isScreenLg } = useResize();
   const [isOpen, setOpen] = useState(false);
 
+  //for fix first render
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <div className={styles.header}>
-      <HeaderTopBlock />
-      <div className={styles.headerMenuContainer}>
-        <div className={styles.headerMenuContent}>
-          {isScreenLg ? <HeaderLeftItems /> : <></>}
-          <Logo src={svgLogo} />
-          <HeaderRightItems
-            isOpen={isOpen}
-            setOpen={setOpen}
-            isScreenLg={isScreenLg}
-          />
+    mounted && (
+      <div className={styles.header}>
+        <HeaderTopBlock />
+        <div className={styles.headerMenuContainer}>
+          <div className={styles.headerMenuContent}>
+            {isScreenLg ? <HeaderLeftItems /> : null}
+            <Logo src={"/logo-black-1.svg"} />
+            <HeaderRightItems
+              isOpen={isOpen}
+              setOpen={setOpen}
+              isScreenLg={isScreenLg}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 };

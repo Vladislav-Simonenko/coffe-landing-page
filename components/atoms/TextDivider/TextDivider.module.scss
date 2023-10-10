@@ -5,11 +5,20 @@
   border-top: 1px solid rgba(34, 60, 80, 0.5);
   border-bottom: 1px solid rgba(34, 60, 80, 0.5);
   .dividerText {
-    margin-left: 70px;
+    margin: 0 70px;
     font-size: 70px;
     line-height: 60px;
     font-family: "Anton";
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1010px) {
+  .dividerContainer {
+    .dividerText {
+      margin: 0 50px;
+      font-size: 60px;
+    }
   }
 }
 
@@ -18,6 +27,7 @@
     justify-content: center;
     .dividerText {
       font-size: 50px;
+      margin: 0;
     }
   }
 }
@@ -26,6 +36,7 @@
   .dividerContainer {
     .dividerText {
       font-size: 40px;
+      margin: 0;
     }
   }
 }
@@ -33,7 +44,8 @@
 @media (max-width: 500px) {
   .dividerContainer {
     .dividerText {
-      font-size: 30px;
+      margin: 0 10px;
+      font-size: 28px;
     }
   }
 }

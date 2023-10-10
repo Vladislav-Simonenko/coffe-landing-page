@@ -1,13 +1,12 @@
 .selectContainer {
   appearance: none;
   background: transparent;
-  padding-right: 20px;
   position: relative;
 
   &::after {
     content: "▼";
     position: absolute;
-    right: 20px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
@@ -15,7 +14,7 @@
 
   &:active {
     &::after {
-      content: "▲"; /* Изменяем символ на стрелку вверх при активации */
+      content: "▲";
     }
   }
 
@@ -37,5 +36,19 @@
     text-transform: lowercase;
     font-size: 18px;
     line-height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .selectContainer {
+    .selectContent {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .optionContainer {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 }

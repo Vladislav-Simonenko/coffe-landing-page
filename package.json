@@ -11,9 +11,11 @@
   "dependencies": {
     "hamburger-react": "^2.5.0",
     "next": "latest",
+    "next-images": "^1.8.5",
     "node-sass": "^9.0.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-modal": "^3.16.1",
     "sass": "^1.68.0",
     "sharp": "^0.32.6",
     "swiper": "^10.3.1"

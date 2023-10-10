@@ -22,7 +22,43 @@
 @media (max-width: 960px) {
   .swiper {
     :global(.swiper-pagination) {
-      height: 10%;
+      height: 8%;
+    }
+    :global(.swiper-pagination-bullet) {
+      display: inline-block;
+      height: 6px !important;
+      width: 6px !important;
+      color: black;
+      background-color: #ebecf0;
+      border: 2px solid black;
+      border-radius: 0 !important;
+      opacity: 1;
+      margin: 0 10px !important;
+    }
+    :global(.swiper-pagination-bullet-active) {
+      background-color: black;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .swiper {
+    :global(.swiper-pagination) {
+      height: 6%;
+    }
+    :global(.swiper-pagination-bullet) {
+      display: inline-block;
+      height: 4px !important;
+      width: 4px !important;
+      color: black;
+      background-color: #ebecf0;
+      border: 2px solid black;
+      border-radius: 0 !important;
+      opacity: 1;
+      margin: 0 10px !important;
+    }
+    :global(.swiper-pagination-bullet-active) {
+      background-color: black;
     }
   }
 }

@@ -1,11 +1,10 @@
 "use client";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import secondSvgLogo from "public/logo-black-2.svg";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeaderRightItems.module.scss";
 import { BurgerMenu, Logo } from "@/components/atoms";
-import svgLogo from "public/logo-black-1.svg";
 
 interface IHeaderRightItemsProps {
   isScreenLg: boolean;
@@ -16,14 +15,50 @@ interface IHeaderRightItemsProps {
 export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
   const { isScreenLg, isOpen, setOpen } = props;
 
+  const closeModal = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   return (
     <div className={styles.headerRightBlock}>
       <React.Fragment>
         <Link className={styles.headerLink} href={"#"}>
-          Cart
+          {!isScreenLg ? (
+            <Image
+              className={styles.headerIcon}
+              src={"/shopping-cart-4.svg"}
+              alt={"Seacrh"}
+              width={100}
+              height={100}
+            />
+          ) : (
+            "Cart"
+          )}
         </Link>
         <Link className={styles.headerLink} href={"#"}>
-          Search
+          {!isScreenLg ? (
+            <Image
+              className={styles.headerIcon}
+              src={"/searching-bar.svg"}
+              alt={"Seacrh"}
+              width={100}
+              height={100}
+            />
+          ) : (
+            "Search"
+          )}
         </Link>
         {!isScreenLg ? (
           <React.Fragment>
@@ -32,19 +67,35 @@ export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
               <div className={styles.menuContainer}>
                 <div className={styles.menuContainerTop}>
                   <div className={styles.menuContainerRoutes}>
-                    <Logo src={svgLogo} />
+                    <Logo src={"/logo-black-1.svg"} />
                     <div className={styles.menuBackgroundBlur}></div>
                     <div className={styles.linksBlock}>
-                      <Link className={styles.link} href={"#"}>
+                      <Link
+                        onClick={closeModal}
+                        className={styles.link}
+                        href={"#"}
+                      >
                         Home
                       </Link>
-                      <Link className={styles.link} href={"#"}>
+                      <Link
+                        onClick={closeModal}
+                        className={styles.link}
+                        href={"#"}
+                      >
                         Pages
                       </Link>
-                      <Link className={styles.link} href={"#"}>
+                      <Link
+                        onClick={closeModal}
+                        className={styles.link}
+                        href={"#"}
+                      >
                         Shop
                       </Link>
-                      <Link className={styles.link} href={"#"}>
+                      <Link
+                        onClick={closeModal}
+                        className={styles.link}
+                        href={"#"}
+                      >
                         Blog
                       </Link>
                     </div>
