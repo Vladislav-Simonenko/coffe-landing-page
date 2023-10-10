@@ -73,28 +73,28 @@ export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
                       <Link
                         onClick={closeModal}
                         className={styles.link}
-                        href={"#"}
+                        href={"#home"}
                       >
                         Home
                       </Link>
                       <Link
                         onClick={closeModal}
                         className={styles.link}
-                        href={"#"}
+                        href={"#pages"}
                       >
                         Pages
                       </Link>
                       <Link
                         onClick={closeModal}
                         className={styles.link}
-                        href={"#"}
+                        href={"#shop"}
                       >
                         Shop
                       </Link>
                       <Link
                         onClick={closeModal}
                         className={styles.link}
-                        href={"#"}
+                        href={"#blog"}
                       >
                         Blog
                       </Link>

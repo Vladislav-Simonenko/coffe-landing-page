@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Footer.module.scss";
 import Image from "next/image";
 
@@ -27,10 +28,18 @@ export const Footer = () => {
         </div>
 
         <div className={styles.footerLocationMenu}>
-          <p>my account </p>
-          <p>checkout </p>
-          <p>cart </p>
-          <p>shop </p>
+          <Link className={styles.link} href={"#home"}>
+            My Account
+          </Link>
+          <Link className={styles.link} href={"#pages"}>
+            Pages
+          </Link>
+          <Link className={styles.link} href={"#shop"}>
+            Cart
+          </Link>
+          <Link className={styles.link} href={"#blog"}>
+            Blog
+          </Link>
         </div>
 
         <div className={styles.footerLocationSocial}>

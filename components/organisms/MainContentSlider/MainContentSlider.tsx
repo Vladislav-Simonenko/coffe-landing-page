@@ -6,34 +6,49 @@ import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import seal from "public/seal.svg";
 import { CarouselCard } from "@/components/molecules";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export const MainContentSlider = () => {
-  return (
-    <div className={styles.sliderContainer}>
-      <CarouselCard>
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className={styles.sliderContent}>
-              <div className={styles.sliderImage}>
-                <img src={item.img} />
-              </div>
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+  });
 
-              <div className={styles.sliderTextBlock}>
-                <p className={styles.sliderText}>
-                  {item.text?.firstWord} <span>{item.text?.secondWord}</span>
-                  <span>{item.text?.thirdWord}</span>
-                  <Image
-                    className={styles.sliderSeal}
-                    src={seal}
-                    alt={"seal"}
-                  />
-                  <span className={styles.sliderSubText}>{item.label}</span>
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </CarouselCard>
+  return (
+    <div ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -50 }}
+        transition={{ delay: inView ? 0.4 : 0, type: "ease-in" }}
+      >
+        <div className={styles.sliderContainer}>
+          <CarouselCard>
+            {data.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className={styles.sliderContent}>
+                  <div className={styles.sliderImage}>
+                    <img src={item.img} />
+                  </div>
+
+                  <div className={styles.sliderTextBlock}>
+                    <p className={styles.sliderText}>
+                      {item.text?.firstWord}{" "}
+                      <span>{item.text?.secondWord}</span>
+                      <span>{item.text?.thirdWord}</span>
+                      <Image
+                        className={styles.sliderSeal}
+                        src={seal}
+                        alt={"seal"}
+                      />
+                      <span className={styles.sliderSubText}>{item.label}</span>
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </CarouselCard>
+        </div>
+      </motion.div>
     </div>
   );
 };

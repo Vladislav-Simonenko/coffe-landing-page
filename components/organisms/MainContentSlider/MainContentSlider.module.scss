@@ -30,6 +30,7 @@
       text-transform: uppercase;
       position: relative;
       padding-left: 30px;
+
       .sliderSeal {
         position: absolute;
         right: 0;
@@ -86,7 +87,7 @@
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1650px) {
   .sliderContainer {
     .sliderTextBlock {
       .sliderText {
@@ -100,12 +101,11 @@
   }
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1350px) {
   .sliderContainer {
     .sliderTextBlock {
       .sliderText {
         font-size: 80px;
-
         .sliderSubText {
           font-size: 40px;
         }
@@ -114,7 +114,7 @@
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .sliderContainer {
     .sliderContent {
       .sliderImage {
@@ -126,7 +126,7 @@
     }
     .sliderTextBlock {
       .sliderText {
-        font-size: 60px;
+        font-size: 55px;
         .sliderSubText {
           font-size: 30px;
         }
@@ -149,7 +149,7 @@
         font-size: 40px;
         .sliderSubText {
           font-size: 20px;
-          bottom: -20px;
+          bottom: -30px;
           rotate: (-5deg);
         }
       }
@@ -171,19 +171,26 @@
 @media (max-width: 550px) {
   .sliderContainer {
     .sliderContent {
+      column-gap: 20px;
       .sliderImage {
         height: 250px;
       }
     }
     .sliderSeal {
+      right: 0;
+      top: -50px !important;
       width: 50px;
     }
     .sliderTextBlock {
       .sliderText {
+        justify-content: center;
+        padding: 0;
         font-size: 20px;
         .sliderSubText {
+          width: 100%;
           font-size: 14px;
-          bottom: -20px;
+          left: 0;
+          bottom: -40px;
           rotate: (-5deg);
         }
       }

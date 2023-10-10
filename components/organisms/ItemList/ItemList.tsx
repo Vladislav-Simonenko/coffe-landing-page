@@ -18,7 +18,7 @@ export const ItemList = (props: IDataProps) => {
   const { data } = props;
 
   return (
-    <div className={styles.productListContainer}>
+    <div id="shop" className={styles.productListContainer}>
       <div className={styles.productListContent}>
         {data.map((item) => (
           <ProductCard item={item} />

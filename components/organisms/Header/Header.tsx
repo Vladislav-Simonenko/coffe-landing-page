@@ -23,7 +23,10 @@ export const Header = () => {
   return (
     mounted && (
       <div className={styles.header}>
-        <HeaderTopBlock />
+        <HeaderTopBlock
+          text=" Welcome to Early Birds. We ship every Tuesday and Thursday. Free shipping above €25 in The Netherlands."
+          speed={80}
+        />
         <div className={styles.headerMenuContainer}>
           <div className={styles.headerMenuContent}>
             {isScreenLg ? <HeaderLeftItems /> : null}

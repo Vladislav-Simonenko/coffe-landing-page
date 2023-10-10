@@ -11,7 +11,7 @@ export const Banner = (props: IBannerProps) => {
   const { text, img } = props;
 
   return (
-    <div className={styles.bannerContainer}>
+    <div id="pages" className={styles.bannerContainer}>
       <Image
         className={styles.bannerImage}
         width={1920}

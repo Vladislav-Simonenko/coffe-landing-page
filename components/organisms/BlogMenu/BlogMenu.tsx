@@ -5,7 +5,7 @@ import { ActionButton } from "@/components/atoms";
 
 export const BlogMenu = () => {
   return (
-    <div className={styles.foodMenuContainer}>
+    <div id="blog" className={styles.foodMenuContainer}>
       <div className={styles.foodMenuContent}>
         <div className={styles.foodMenuCover}>
           <p className={styles.foodMenuText}>
