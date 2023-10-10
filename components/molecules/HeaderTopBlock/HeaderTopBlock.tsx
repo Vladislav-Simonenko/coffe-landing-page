@@ -18,7 +18,6 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
   });
   const [animationComplete, setAnimationComplete] = useState(false);
 
-  // Функция для управления интервалом
   const useInterval = (callback: () => void, delay: number | null) => {
     const savedCallback = useRef<() => void>();
 
@@ -64,7 +63,6 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
     }, speed);
   };
 
-  // Используйте useInterval для бесконечного мигания
   useInterval(() => {
     setAnimationComplete((prevComplete) => !prevComplete);
   }, 500);
