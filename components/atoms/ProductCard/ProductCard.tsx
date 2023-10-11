@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import styles from "./ProductCard.module.scss";
 import Image from "next/image";
@@ -32,8 +31,7 @@ export const ProductCard = (props: IProductCard) => {
   useEffect(() => {
     if (inView && !animationStarted) {
       const startAnimation = async () => {
-        // Используйте requestAnimationFrame для анимации
-        requestAnimationFrame(async () => {
+        setTimeout(async () => {
           await controls.start({
             opacity: 1,
             transition: {
@@ -42,11 +40,14 @@ export const ProductCard = (props: IProductCard) => {
             },
           });
           setAnimationStarted(true);
-        });
+        }, 400);
       };
       startAnimation();
     }
   }, [inView, controls, animationStarted]);
+
+  const maxDelay = 0.4;
+  const delay = Math.min(index * 1000, maxDelay);
 
   return (
     <motion.div
@@ -57,11 +58,7 @@ export const ProductCard = (props: IProductCard) => {
       className={styles.productListPopular}
       style={{
         position: "relative",
-        transitionDelay: `${index * 1000}ms`,
-        // Используйте GPU-ускорение
-        transform: "translate3d(0, 0, 0)",
-        // Включите анимационное сглаживание
-        backfaceVisibility: "hidden",
+        transitionDelay: `${delay}ms`,
       }}
     >
       <div className={styles.productImageContainer}>

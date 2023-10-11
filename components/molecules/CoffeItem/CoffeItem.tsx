@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CoffeItem.module.scss";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -23,16 +23,27 @@ export const CoffeItem = (props: ICoffeItemProps) => {
     triggerOnce: true,
   });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        transition: { duration: 1 * delay },
-      });
-    }
-  }, [inView, controls]);
+  const [animationStarted, setAnimationStarted] = useState(false);
 
-  const maxDelay = 1;
+  useEffect(() => {
+    if (inView && !animationStarted) {
+      const startAnimation = async () => {
+        setTimeout(async () => {
+          await controls.start({
+            opacity: 1,
+            transition: {
+              duration: 1,
+              delay: inView ? index : 0,
+            },
+          });
+          setAnimationStarted(true);
+        }, 400);
+      };
+      startAnimation();
+    }
+  }, [inView, controls, animationStarted]);
+
+  const maxDelay = 0.4;
   const delay = Math.min(index * 1000, maxDelay);
 
   return (
