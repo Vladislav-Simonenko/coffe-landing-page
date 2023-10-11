@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeaderRightItems.module.scss";
 import { BurgerMenu, Logo } from "@/components/atoms";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 interface IHeaderRightItemsProps {
   isScreenLg: boolean;
   isOpen: boolean;
@@ -69,46 +69,54 @@ export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
         {!isScreenLg ? (
           <React.Fragment>
             <BurgerMenu isOpen={isOpen} setOpen={setOpen} />
-            {isOpen ? (
-              <div className={styles.menuContainer}>
-                <div className={styles.menuContainerTop}>
-                  <div className={styles.menuContainerRoutes}>
-                    <Logo src={"/logo-black-1.svg"} />
-                    <div className={styles.menuBackgroundBlur}></div>
-                    <div className={styles.linksBlock}>
-                      <Link
-                        onClick={closeModal}
-                        className={styles.link}
-                        href={"#home"}
-                      >
-                        Home
-                      </Link>
-                      <Link
-                        onClick={closeModal}
-                        className={styles.link}
-                        href={"#pages"}
-                      >
-                        Pages
-                      </Link>
-                      <Link
-                        onClick={closeModal}
-                        className={styles.link}
-                        href={"#shop"}
-                      >
-                        Shop
-                      </Link>
-                      <Link
-                        onClick={closeModal}
-                        className={styles.link}
-                        href={"#blog"}
-                      >
-                        Blog
-                      </Link>
+            <AnimatePresence>
+              {isOpen ? (
+                <motion.div
+                  initial={{ opacity: 0, transform: "translateY(-100%)" }}
+                  animate={{ opacity: 1, transform: "translateY(0%)" }}
+                  exit={{ opacity: 0, transform: "translateY(-100%)" }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
+                  className={styles.menuContainer}
+                >
+                  <div className={styles.menuContainerTop}>
+                    <div className={styles.menuContainerRoutes}>
+                      <Logo src={"/logo-black-1.svg"} />
+                      <div className={styles.menuBackgroundBlur}></div>
+                      <div className={styles.linksBlock}>
+                        <Link
+                          onClick={closeModal}
+                          className={styles.link}
+                          href={"#home"}
+                        >
+                          Home
+                        </Link>
+                        <Link
+                          onClick={closeModal}
+                          className={styles.link}
+                          href={"#pages"}
+                        >
+                          Pages
+                        </Link>
+                        <Link
+                          onClick={closeModal}
+                          className={styles.link}
+                          href={"#shop"}
+                        >
+                          Shop
+                        </Link>
+                        <Link
+                          onClick={closeModal}
+                          className={styles.link}
+                          href={"#blog"}
+                        >
+                          Blog
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ) : null}
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
           </React.Fragment>
         ) : (
           <div className={styles.headerRightBlockLogo}>
