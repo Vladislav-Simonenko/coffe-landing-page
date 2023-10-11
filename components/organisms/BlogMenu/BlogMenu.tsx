@@ -22,18 +22,18 @@ export const BlogMenu = () => {
             opacity: inView ? 1 : 0,
             x: inView ? 0 : -1000,
             transition: {
-              duration: 0.3,
+              duration: 0.2,
               delay: inView ? delay : 0,
             },
           });
           setAnimationStarted(true);
-        }, 300);
+        }, 200);
       };
       startAnimation();
     }
   }, [inView, controls, animationStarted]);
 
-  const delay = 0.3;
+  const delay = 0.2;
 
   return (
     <div ref={ref}>
