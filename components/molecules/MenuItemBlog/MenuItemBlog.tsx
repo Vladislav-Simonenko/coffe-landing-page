@@ -41,9 +41,6 @@ export const MenuItemBlog = (props: IMenuItemProps) => {
     }
   }, [inView, controls, animationStarted]);
 
-  const maxDelay = 0.4;
-  const delay = Math.min(index * 1000, maxDelay);
-
   return (
     <motion.div
       ref={ref}
@@ -53,7 +50,6 @@ export const MenuItemBlog = (props: IMenuItemProps) => {
       className={styles.productListPopular}
       style={{
         position: "relative",
-        transitionDelay: `${delay}ms`,
       }}
     >
       <div key={item.id} className={styles.menuItemContainer}>
