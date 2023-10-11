@@ -11,14 +11,14 @@ import { motion } from "framer-motion";
 
 export const MainContentSlider = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
   return (
     <div ref={ref}>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : -50 }}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
         transition={{ delay: inView ? 0.4 : 0, type: "ease-in" }}
       >
         <div className={styles.sliderContainer}>

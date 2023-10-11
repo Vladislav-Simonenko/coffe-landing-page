@@ -22,8 +22,8 @@ export const ItemMenu = () => {
         </div>
 
         <div className={styles.foodMenuProposal}>
-          {foodMenuItems.map((item) => (
-            <MenuItem item={item} />
+          {foodMenuItems.map((item, index) => (
+            <MenuItem key={item.id} item={item} index={index} />
           ))}
         </div>
       </div>

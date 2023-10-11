@@ -1,14 +1,24 @@
+"use client";
 import React from "react";
 import styles from "./FollowUs.module.scss";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const FollowUs = () => {
+  const staggerDuration = 0.3; 
+  
   return (
     <div className={styles.followUsContainer}>
       <div className={styles.followUsContent}>
-        {coffeDataItem.map((item) => {
+        {coffeDataItem.map((item, index) => {
           return (
-            <div className={styles.followUsImageContainer} key={item.id}>
+            <motion.div
+              className={styles.followUsImageContainer}
+              key={item.id}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: index * staggerDuration }}
+            >
               <Image
                 className={styles.followUsImage}
                 src={item.img}
@@ -16,7 +26,7 @@ export const FollowUs = () => {
                 width={1920}
                 height={1080}
               />
-            </div>
+            </motion.div>
           );
         })}
       </div>

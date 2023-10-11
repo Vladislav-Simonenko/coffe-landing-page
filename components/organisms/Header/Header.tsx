@@ -25,7 +25,7 @@ export const Header = () => {
       <div className={styles.header}>
         <HeaderTopBlock
           text=" Welcome to Early Birds. We ship every Tuesday and Thursday. Free shipping above €25 in The Netherlands."
-          speed={80}
+          speed={50}
         />
         <div className={styles.headerMenuContainer}>
           <div className={styles.headerMenuContent}>

@@ -16,8 +16,8 @@ export const BlogMenu = () => {
         </div>
 
         <div className={styles.foodMenuProposal}>
-          {data.map((item) => (
-            <MenuItemBlog item={item} />
+          {data.map((item, index) => (
+            <MenuItemBlog key={item.id} item={item} index={index} />
           ))}
         </div>
       </div>

@@ -17,26 +17,7 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
     triggerOnce: true,
   });
   const [animationComplete, setAnimationComplete] = useState(false);
-
-  const useInterval = (callback: () => void, delay: number | null) => {
-    const savedCallback = useRef<() => void>();
-
-    useEffect(() => {
-      savedCallback.current = callback;
-    }, [callback]);
-
-    useEffect(() => {
-      function tick() {
-        if (savedCallback.current) {
-          savedCallback.current();
-        }
-      }
-      if (delay !== null) {
-        const id = setInterval(tick, delay);
-        return () => clearInterval(id);
-      }
-    }, [delay]);
-  };
+  const [blinkVisible, setBlinkVisible] = useState(true);
 
   useEffect(() => {
     if (inView) {
@@ -58,14 +39,18 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
         index++;
       } else {
         clearInterval(timer);
-        setAnimationComplete(true);
+
+        const blinkTimer = setInterval(() => {
+          setBlinkVisible((prevVisible) => !prevVisible);
+        }, 500);
+
+        setTimeout(() => {
+          clearInterval(blinkTimer);
+          setAnimationComplete(true);
+        }, 3000);
       }
     }, speed);
   };
-
-  useInterval(() => {
-    setAnimationComplete((prevComplete) => !prevComplete);
-  }, 500);
 
   const endTextVariants = {
     hidden: { opacity: 0 },
@@ -74,20 +59,20 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
 
   return (
     <div className={styles.headerTopBlackContent}>
-      <p className={styles.headerTopText}>
-        <motion.div
-          style={{
-            position: "relative",
-          }}
-          ref={ref}
-          initial={{ opacity: 0 }}
-          animate={controls}
-        >
+      <motion.div
+        style={{
+          position: "relative",
+        }}
+        ref={ref}
+        initial={{ opacity: 0 }}
+        animate={controls}
+      >
+        <p className={styles.headerTopText}>
           {visibleText}
-          {animationComplete && (
+          {!animationComplete ? (
             <motion.span
               initial="hidden"
-              animate="visible"
+              animate={blinkVisible ? "visible" : "hidden"}
               variants={endTextVariants}
               style={{
                 position: "absolute",
@@ -95,9 +80,9 @@ export const HeaderTopBlock = (props: TypingTextProps) => {
             >
               |
             </motion.span>
-          )}
-        </motion.div>
-      </p>
+          ) : null}
+        </p>
+      </motion.div>
     </div>
   );
 };

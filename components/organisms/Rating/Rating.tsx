@@ -5,37 +5,51 @@ import styles from "./Rating.module.scss";
 import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 import { CarouselRating, RatingStarsCounter } from "@/components/molecules";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 export const Rating = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
-    <div className={styles.ratingContainer}>
-      <CarouselRating>
-        {data.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className={styles.ratingContent}>
-              <div className={styles.ratingTopComments}>
-                <div className={styles.ratingStars}>
-                  <RatingStarsCounter rating={item.rating} maxRating={5} />
+    <div ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
+        transition={{ delay: inView ? 0.4 : 0, type: "ease-in" }}
+      >
+        <div className={styles.ratingContainer}>
+          <CarouselRating>
+            {data.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className={styles.ratingContent}>
+                  <div className={styles.ratingTopComments}>
+                    <div className={styles.ratingStars}>
+                      <RatingStarsCounter rating={item.rating} maxRating={5} />
+                    </div>
+                    <div
+                      className={styles.ratingComments}
+                    >{`\"${item.text}\"`}</div>
+                    <div className={styles.ratingAuthor}>{item.author}</div>
+                    <div className={styles.ratingDots}></div>
+                  </div>
+                  <div className={styles.ratingImageContainer}>
+                    <Image
+                      className={styles.ratingImage}
+                      src={item.productImg}
+                      alt="ratingImgOne"
+                      width={960}
+                      height={878}
+                    />
+                  </div>
                 </div>
-                <div
-                  className={styles.ratingComments}
-                >{`\"${item.text}\"`}</div>
-                <div className={styles.ratingAuthor}>{item.author}</div>
-                <div className={styles.ratingDots}></div>
-              </div>
-              <div className={styles.ratingImageContainer}>
-                <Image
-                  className={styles.ratingImage}
-                  src={item.productImg}
-                  alt="ratingImgOne"
-                  width={960}
-                  height={878}
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </CarouselRating>
+              </SwiperSlide>
+            ))}
+          </CarouselRating>
+        </div>
+      </motion.div>
     </div>
   );
 };

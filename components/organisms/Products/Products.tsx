@@ -21,8 +21,8 @@ export const Products = () => {
           </p>
           <ActionButton text={"view more"} img={arrow} />
         </div>
-        {coffeData.map((item) => (
-          <ProductCard item={item} />
+        {coffeData.map((item, index) => (
+          <ProductCard item={item} key={item.id} index={index} />
         ))}
       </div>
     </div>

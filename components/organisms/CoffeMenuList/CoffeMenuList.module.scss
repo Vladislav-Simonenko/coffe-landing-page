@@ -4,6 +4,7 @@
     border-top: 1px solid rgba(34, 60, 80, 0.5);
 
     .coffeMenuList {
+      padding: 165px;
       flex: 1 1 50%;
     }
 
@@ -42,6 +43,9 @@
       display: flex;
       flex-direction: column-reverse;
       border-bottom: 1px solid rgba(34, 60, 80, 0.5);
+      .coffeMenuList {
+        padding: 85px;
+      }
     }
   }
 }
@@ -49,6 +53,9 @@
 @media (max-width: 650px) {
   .coffeMenuContainer {
     .coffeMenuContant {
+      .coffeMenuList {
+        padding: 60px;
+      }
       .coffeMenuImageContainer {
         .coffeMenuImageText {
           font-size: 80px;
@@ -61,6 +68,9 @@
 @media (max-width: 400px) {
   .coffeMenuContainer {
     .coffeMenuContant {
+      .coffeMenuList {
+        padding: 20px;
+      }
       .coffeMenuImageContainer {
         .coffeMenuImageText {
           font-size: 60px;

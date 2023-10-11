@@ -8,7 +8,9 @@ export const CoffeMenuList = () => {
     <div className={styles.coffeMenuContainer}>
       <div className={styles.coffeMenuContant}>
         <div className={styles.coffeMenuList}>
-          <CoffeItem data={coffeDataItem} />
+          {coffeDataItem.map((item, index) => (
+            <CoffeItem key={item.id} item={item} index={index} />
+          ))}
         </div>
 
         <div className={styles.coffeMenuImageContainer}>

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { ProductCard } from "@/components/atoms";
 import styles from "./ItemList.module.scss";
@@ -20,8 +22,8 @@ export const ItemList = (props: IDataProps) => {
   return (
     <div id="shop" className={styles.productListContainer}>
       <div className={styles.productListContent}>
-        {data.map((item) => (
-          <ProductCard item={item} />
+        {data.map((item, index) => (
+          <ProductCard key={item.id} item={item} index={index} />
         ))}
       </div>
     </div>

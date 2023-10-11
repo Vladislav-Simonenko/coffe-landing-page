@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
-  padding: 165px;
 
   .coffeItemContant {
     display: flex;
@@ -53,23 +52,5 @@
       line-height: 24px;
       letter-spacing: 0.72px;
     }
-  }
-}
-
-@media (max-width: 1250px) {
-  .coffeItemContainer {
-    padding: 85px;
-  }
-}
-
-@media (max-width: 960px) {
-  .coffeItemContainer {
-    padding: 65px;
-  }
-}
-
-@media (max-width: 450px) {
-  .coffeItemContainer {
-    padding: 20px;
   }
 }
