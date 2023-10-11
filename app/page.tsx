@@ -99,7 +99,7 @@ const teamData = [
   {
     id: 1,
     img: "/images/team-5.png",
-    name: "Tom Splinder",
+    name: "Rita Flams",
     price: "Manager",
     text: "",
     label: false,
@@ -107,7 +107,7 @@ const teamData = [
   {
     id: 2,
     img: "/images/team-2.png",
-    name: "Jonas Hanks",
+    name: "Uma Clark",
     price: "Manager",
     text: "",
     label: false,
@@ -123,7 +123,7 @@ const teamData = [
   {
     id: 4,
     img: "/images/team-4.png",
-    name: "Media manager",
+    name: "Jason Statham",
     price: "Chef",
     text: "",
     label: false,
@@ -131,7 +131,7 @@ const teamData = [
   {
     id: 5,
     img: "/images/team-1.png",
-    name: "Uma Clark",
+    name: "Jonas Hanks",
     price: "Manager",
     text: "",
     label: false,
@@ -139,7 +139,7 @@ const teamData = [
   {
     id: 6,
     img: "/images/team-6.png",
-    name: "Rita Flams",
+    name: "Tom Splinder",
     price: "Sales person",
     text: "",
     label: false,

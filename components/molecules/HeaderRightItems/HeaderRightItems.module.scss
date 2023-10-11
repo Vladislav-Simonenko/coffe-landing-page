@@ -48,6 +48,23 @@
       background-color: rgba(34, 60, 80, 0.5);
       z-index: 0;
     }
+
+    .coffeCupLogo {
+      width: 60px;
+      height: 70px;
+      position: absolute;
+      bottom: -10px;
+      z-index: 1;
+    }
+    .coffeSteamLogo {
+      width: 30px;
+      height: 30px;
+      transform: translate(-70%, 20%);
+      left: 50%;
+      position: absolute;
+      top: -25px;
+      z-index: 5;
+    }
   }
 }
 

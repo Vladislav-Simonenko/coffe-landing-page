@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeaderRightItems.module.scss";
 import { BurgerMenu, Logo } from "@/components/atoms";
-
+import { motion } from "framer-motion";
 interface IHeaderRightItemsProps {
   isScreenLg: boolean;
   isOpen: boolean;
@@ -14,7 +14,13 @@ interface IHeaderRightItemsProps {
 
 export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
   const { isScreenLg, isOpen, setOpen } = props;
+  const rotateDuration = 6;
+  const rotation = 360;
 
+  const rotationVariants = {
+    initial: { rotate: 0 },
+    animate: { rotate: rotation },
+  };
   const closeModal = () => {
     setOpen(false);
   };
@@ -106,7 +112,17 @@ export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
           </React.Fragment>
         ) : (
           <div className={styles.headerRightBlockLogo}>
-            <Image width={165} height={40} src={secondSvgLogo} alt={"star"} />
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={rotationVariants}
+              transition={{
+                duration: rotateDuration,
+                ease: "linear",
+              }}
+            >
+              <Image width={165} height={40} src={secondSvgLogo} alt={"star"} />
+            </motion.div>
           </div>
         )}
       </React.Fragment>
