@@ -1,32 +1,71 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./ItemMenu.module.scss";
 import Image from "next/image";
 import { MenuItem } from "@/components/molecules";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 
 export const ItemMenu = () => {
-  return (
-    <div className={styles.foodMenuContainer}>
-      <div className={styles.foodMenuContent}>
-        <div className={styles.foodMenuCover}>
-          <p className={styles.foodMenuText}>
-            swing by our place <br /> we also
-            <span className={styles.foodMenuCircle}> have food. </span>
-          </p>
-          <Image
-            className={styles.foodMenuImage}
-            src={"/food-menu.svg"}
-            alt={"nuts"}
-            width={50}
-            height={50}
-          />
-        </div>
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
-        <div className={styles.foodMenuProposal}>
-          {foodMenuItems.map((item, index) => (
-            <MenuItem key={item.id} item={item} index={index} />
-          ))}
+  const [animationStarted, setAnimationStarted] = useState(false);
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView && !animationStarted) {
+      const startAnimation = async () => {
+        setTimeout(async () => {
+          await controls.start({
+            opacity: inView ? 1 : 0,
+            x: inView ? 0 : -1000,
+            transition: {
+              duration: 0.3,
+              delay: inView ? delay : 0,
+            },
+          });
+          setAnimationStarted(true);
+        }, 300);
+      };
+      startAnimation();
+    }
+  }, [inView, controls, animationStarted]);
+
+  const delay = 0.3;
+
+  return (
+    <div ref={ref}>
+      <motion.div
+        animate={controls}
+        initial={{ opacity: 0, x: -5000 }}
+        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
+      >
+        <div className={styles.foodMenuContainer}>
+          <div className={styles.foodMenuContent}>
+            <div className={styles.foodMenuCover}>
+              <p className={styles.foodMenuText}>
+                swing by our place <br /> we also
+                <span className={styles.foodMenuCircle}> have food. </span>
+              </p>
+              <Image
+                className={styles.foodMenuImage}
+                src={"/food-menu.svg"}
+                alt={"nuts"}
+                width={50}
+                height={50}
+              />
+            </div>
+
+            <div className={styles.foodMenuProposal}>
+              {foodMenuItems.map((item, index) => (
+                <MenuItem key={item.id} item={item} index={index} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

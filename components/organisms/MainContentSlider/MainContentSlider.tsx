@@ -23,26 +23,26 @@ export const MainContentSlider = () => {
         setTimeout(async () => {
           await controls.start({
             opacity: inView ? 1 : 0,
-            x: inView ? 0 : -50,
+            x: inView ? 0 : -1000,
             transition: {
-              duration: 1,
+              duration: 0.3,
               delay: inView ? delay : 0,
             },
           });
           setAnimationStarted(true);
-        }, 400);
+        }, 300);
       };
       startAnimation();
     }
   }, [inView, controls, animationStarted]);
 
-  const delay = 0.4;
+  const delay = 0.3;
 
   return (
     <div ref={ref}>
       <motion.div
         animate={controls}
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -5000 }}
         transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
       >
         <div className={styles.sliderContainer}>
