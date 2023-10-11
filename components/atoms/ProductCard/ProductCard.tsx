@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ProductCard.module.scss";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
@@ -27,16 +26,27 @@ export const ProductCard = (props: IProductCard) => {
     triggerOnce: true,
   });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        transition: { duration: 1 * delay },
-      });
-    }
-  }, [inView, controls]);
+  const [animationStarted, setAnimationStarted] = useState(false);
 
-  const maxDelay = 1;
+  useEffect(() => {
+    if (inView && !animationStarted) {
+      const startAnimation = async () => {
+        setTimeout(async () => {
+          await controls.start({
+            opacity: 1,
+            transition: {
+              duration: 1,
+              delay: inView ? index : 0,
+            },
+          });
+          setAnimationStarted(true);
+        }, 1000);
+      };
+      startAnimation();
+    }
+  }, [inView, controls, animationStarted]);
+
+  const maxDelay = 5;
   const delay = Math.min(index * 1000, maxDelay);
 
   return (
