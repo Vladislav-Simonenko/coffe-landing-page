@@ -20,11 +20,11 @@ import React from "react";
 export default function Home() {
   return (
     <React.Fragment>
-      <ScrollingEffect offset={-100}>
+      <ScrollingEffect>
         <MainContentSlider />
       </ScrollingEffect>
 
-      <ScrollingEffect offset={100}>
+      <ScrollingEffect>
         <AdvantagesDivider data={dividerText} />
         <Products />
       </ScrollingEffect>
@@ -58,7 +58,7 @@ export default function Home() {
         <BlogMenu />
       </ScrollingEffect>
 
-      <ScrollingEffect offset={200}>
+      <ScrollingEffect>
         <GreenBlog />
       </ScrollingEffect>
 
@@ -71,7 +71,7 @@ export default function Home() {
         <CoffeMenuList />
       </ScrollingEffect>
 
-      <ScrollingEffect offset={0}>
+      <ScrollingEffect>
         <TextDivider text={"Follow us for more"} />
         <FollowUs />
       </ScrollingEffect>
