@@ -9,6 +9,10 @@ export const ScrollingEffect = ({ children }: any): JSX.Element => {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     controls.start({
       opacity: inView ? 1 : 0,
       y: inView ? 0 : 100,
