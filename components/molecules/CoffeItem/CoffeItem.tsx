@@ -33,7 +33,7 @@ export const CoffeItem = (props: ICoffeItemProps) => {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: 0,
+              delay: 0.1 * index,
             },
           });
           setAnimationStarted(true);

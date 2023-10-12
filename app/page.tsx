@@ -54,11 +54,7 @@ export default function Home() {
         <ItemList data={teamData} />
       </ScrollingEffect>
 
-      <ScrollingEffect>
-        <BlogMenu />
-      </ScrollingEffect>
-
-      <ScrollingEffect>
+      <ScrollingEffect offset={200}>
         <GreenBlog />
       </ScrollingEffect>
 

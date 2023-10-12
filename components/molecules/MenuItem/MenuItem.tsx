@@ -29,17 +29,17 @@ export const MenuItem = (props: IMenuItemProps) => {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: inView ? index : 0,
+              delay: inView ? 0.2 * index : 0,
             },
           });
           setAnimationStarted(true);
-        }, 400);
+        }, 500);
       };
       startAnimation();
     }
   }, [inView, controls, animationStarted]);
 
-  const maxDelay = 0.4;
+  const maxDelay = 0.1;
   const delay = Math.min(index * 1000, maxDelay);
 
   return (
