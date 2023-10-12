@@ -43,32 +43,24 @@ export const ReserveTable = () => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.reserveContainer}>
-          <div className={styles.reserveContent}>
-            <p className={styles.reserveTitle}>Reserve you table</p>
-            <Selector onReservationChange={handleReservationChange} />
-            {reservation && (
-              <p className={styles.reserveDescriprion}>
-                the table was booked on {/* @ts-ignore */}
-                {reservation?.date +
-                  " " +
-                  //  @ts-ignore
-                  reservation?.time +
-                  ", for " +
-                  //  @ts-ignore
-                  reservation?.numberOfPeople +
-                  " person "}
-              </p>
-            )}
-          </div>
-        </div>
-      </motion.div>
+    <div className={styles.reserveContainer}>
+      <div className={styles.reserveContent}>
+        <p className={styles.reserveTitle}>Reserve you table</p>
+        <Selector onReservationChange={handleReservationChange} />
+        {reservation && (
+          <p className={styles.reserveDescriprion}>
+            the table was booked on {/* @ts-ignore */}
+            {reservation?.date +
+              " " +
+              //  @ts-ignore
+              reservation?.time +
+              ", for " +
+              //  @ts-ignore
+              reservation?.numberOfPeople +
+              " person "}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

@@ -50,17 +50,7 @@ export const ProductCard = (props: IProductCard) => {
   const delay = Math.min(index * 1000, maxDelay);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={controls}
-      key={item?.id}
-      className={styles.productListPopular}
-      style={{
-        position: "relative",
-        transitionDelay: `${delay}ms`,
-      }}
-    >
+    <div className={styles.productListPopular}>
       <div className={styles.productImageContainer}>
         <Image
           className={
@@ -85,6 +75,6 @@ export const ProductCard = (props: IProductCard) => {
           </div>
         ) : null}
       </div>
-    </motion.div>
+    </div>
   );
 };

@@ -31,11 +31,11 @@ export const MenuItemBlog = (props: IMenuItemProps) => {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: inView ? index : 0,
+              delay: inView ? index * 0.1 : 0,
             },
           });
           setAnimationStarted(true);
-        }, 400);
+        }, 200);
       };
       startAnimation();
     }

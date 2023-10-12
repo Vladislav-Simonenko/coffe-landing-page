@@ -5,6 +5,7 @@ import { ActionButton, ProductCard } from "@/components/atoms";
 import arrow from "public/slider-arrow.svg";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
+import { ScrollingEffect } from "../ScrollingEffect/ScrollingEffect";
 
 export const Products = () => {
   const [ref, inView] = useInView({
@@ -36,34 +37,26 @@ export const Products = () => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.productListContainer}>
-          <div className={styles.productListContant}>
-            <div className={styles.productListInfo}>
-              <p className={styles.infoTitle}>
-                Our blends deliver on the promise of balance and consistency,
-                <span className={styles.infoTitleCircle}> roasted to </span>
-                maximize sweetness.
-              </p>
-              <p className={styles.infoDescription}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis enim ut perferendis porro vitae vouptatum hic sequi
-                consequuntur praesentium exercitationem odit, dolor, illum
-                impedit quisquam repellat! Dolorem dolores tempora ipsum.
-              </p>
-              <ActionButton text={"view more"} img={arrow} />
-            </div>
-            {coffeData.map((item, index) => (
-              <ProductCard item={item} key={item.id} index={index} />
-            ))}
-          </div>
+    <div className={styles.productListContainer}>
+      <div className={styles.productListContant}>
+        <div className={styles.productListInfo}>
+          <p className={styles.infoTitle}>
+            Our blends deliver on the promise of balance and consistency,
+            <span className={styles.infoTitleCircle}> roasted to </span>
+            maximize sweetness.
+          </p>
+          <p className={styles.infoDescription}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+            enim ut perferendis porro vitae vouptatum hic sequi consequuntur
+            praesentium exercitationem odit, dolor, illum impedit quisquam
+            repellat! Dolorem dolores tempora ipsum.
+          </p>
+          <ActionButton text={"view more"} img={arrow} />
         </div>
-      </motion.div>
+        {coffeData.map((item, index) => (
+          <ProductCard item={item} key={item.id} index={index} />
+        ))}
+      </div>
     </div>
   );
 };

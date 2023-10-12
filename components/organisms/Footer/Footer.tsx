@@ -18,12 +18,16 @@ export const Footer = () => {
           </div>
 
           <div className={styles.footerLocationText}>
-            <p className={styles.footerLocationTitle}>Early Birds</p>
-            <p className={styles.footerLocationDistrict}>
-              Weteringstraat 48,1017 SP
-            </p>
-            <p className={styles.footerLocationCity}>Amsterdam</p>
-            <p className={styles.footerLocationPhone}>Tel: 020-7718364</p>
+            <div>
+              <p className={styles.footerLocationTitle}>Early Birds</p>
+            </div>
+            <div>
+              <p className={styles.footerLocationDistrict}>
+                Weteringstraat 48,1017 SP
+              </p>
+              <p className={styles.footerLocationCity}>Amsterdam</p>
+              <p className={styles.footerLocationPhone}>Tel: 020-7718364</p>
+            </div>
           </div>
         </div>
 

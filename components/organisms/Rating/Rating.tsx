@@ -38,42 +38,34 @@ export const Rating = () => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.ratingContainer}>
-          <CarouselRating>
-            {data.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className={styles.ratingContent}>
-                  <div className={styles.ratingTopComments}>
-                    <div className={styles.ratingStars}>
-                      <RatingStarsCounter rating={item.rating} maxRating={5} />
-                    </div>
-                    <div
-                      className={styles.ratingComments}
-                    >{`\"${item.text}\"`}</div>
-                    <div className={styles.ratingAuthor}>{item.author}</div>
-                    <div className={styles.ratingDots}></div>
-                  </div>
-                  <div className={styles.ratingImageContainer}>
-                    <Image
-                      className={styles.ratingImage}
-                      src={item.productImg}
-                      alt="ratingImgOne"
-                      width={960}
-                      height={878}
-                    />
-                  </div>
+    <div className={styles.ratingContainer}>
+      <CarouselRating>
+        {data.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className={styles.ratingContent}>
+              <div className={styles.ratingTopComments}>
+                <div className={styles.ratingStars}>
+                  <RatingStarsCounter rating={item.rating} maxRating={5} />
                 </div>
-              </SwiperSlide>
-            ))}
-          </CarouselRating>
-        </div>
-      </motion.div>
+                <div
+                  className={styles.ratingComments}
+                >{`\"${item.text}\"`}</div>
+                <div className={styles.ratingAuthor}>{item.author}</div>
+                <div className={styles.ratingDots}></div>
+              </div>
+              <div className={styles.ratingImageContainer}>
+                <Image
+                  className={styles.ratingImage}
+                  src={item.productImg}
+                  alt="ratingImgOne"
+                  width={960}
+                  height={878}
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </CarouselRating>
     </div>
   );
 };

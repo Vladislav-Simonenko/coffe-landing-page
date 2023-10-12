@@ -18,6 +18,8 @@
 .footerContainer {
   display: flex;
   flex-direction: column;
+  box-shadow: 1px -1px 0px 0px rgba(34, 60, 80, 0.5);
+  background-color: white;
 
   .footerContent {
     padding: 70px;

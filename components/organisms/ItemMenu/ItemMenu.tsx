@@ -36,36 +36,28 @@ export const ItemMenu = () => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.foodMenuContainer}>
-          <div className={styles.foodMenuContent}>
-            <div className={styles.foodMenuCover}>
-              <p className={styles.foodMenuText}>
-                swing by our place <br /> we also
-                <span className={styles.foodMenuCircle}> have food. </span>
-              </p>
-              <Image
-                className={styles.foodMenuImage}
-                src={"/food-menu.svg"}
-                alt={"nuts"}
-                width={50}
-                height={50}
-              />
-            </div>
-
-            <div className={styles.foodMenuProposal}>
-              {foodMenuItems.map((item, index) => (
-                <MenuItem key={item.id} item={item} index={index} />
-              ))}
-            </div>
-          </div>
+    <div className={styles.foodMenuContainer}>
+      <div className={styles.foodMenuContent}>
+        <div className={styles.foodMenuCover}>
+          <p className={styles.foodMenuText}>
+            swing by our place <br /> we also
+            <span className={styles.foodMenuCircle}> have food. </span>
+          </p>
+          <Image
+            className={styles.foodMenuImage}
+            src={"/food-menu.svg"}
+            alt={"nuts"}
+            width={50}
+            height={50}
+          />
         </div>
-      </motion.div>
+
+        <div className={styles.foodMenuProposal}>
+          {foodMenuItems.map((item, index) => (
+            <MenuItem key={item.id} item={item} index={index} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

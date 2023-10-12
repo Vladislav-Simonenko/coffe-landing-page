@@ -49,20 +49,12 @@ export const ItemList = (props: IDataProps) => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div id="shop" className={styles.productListContainer}>
-          <div className={styles.productListContent}>
-            {data.map((item, index) => (
-              <ProductCard key={item.id} item={item} index={index} />
-            ))}
-          </div>
-        </div>
-      </motion.div>
+    <div id="shop" className={styles.productListContainer}>
+      <div className={styles.productListContent}>
+        {data.map((item, index) => (
+          <ProductCard key={item.id} item={item} index={index} />
+        ))}
+      </div>
     </div>
   );
 };

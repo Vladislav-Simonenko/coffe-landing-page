@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import styles from "./AdvantagesDivider.module.scss";
+import { ScrollingEffect } from "@/components/organisms/ScrollingEffect/ScrollingEffect";
 
 interface IAdvantagesDivider {
   data: { id: number; text: string }[];
@@ -40,25 +41,17 @@ export const AdvantagesDivider = (props: IAdvantagesDivider) => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.dividerContainer}>
-          {data.map((item, index) => (
-            <p key={item.id}>
-              {item.text}
-              {index !== data.length - 1 ? (
-                <span className={styles.divider}>|</span>
-              ) : (
-                ""
-              )}
-            </p>
-          ))}
-        </div>
-      </motion.div>
+    <div className={styles.dividerContainer}>
+      {data.map((item, index) => (
+        <p key={item.id}>
+          {item.text}
+          {index !== data.length - 1 ? (
+            <span className={styles.divider}>|</span>
+          ) : (
+            ""
+          )}
+        </p>
+      ))}
     </div>
   );
 };

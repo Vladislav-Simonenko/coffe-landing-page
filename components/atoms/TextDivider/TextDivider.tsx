@@ -38,16 +38,8 @@ export const TextDivider = (props: ITextDivider) => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div className={styles.dividerContainer}>
-          <p className={styles.dividerText}>{text}</p>
-        </div>
-      </motion.div>
+    <div className={styles.dividerContainer}>
+      <p className={styles.dividerText}>{text}</p>
     </div>
   );
 };

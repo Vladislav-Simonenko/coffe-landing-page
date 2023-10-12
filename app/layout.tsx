@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "en",
     images: [
       {
-        url: "/logo-black-1.svg",
+        url: "/coffe-cup.svg",
         width: 800,
         height: 600,
       },

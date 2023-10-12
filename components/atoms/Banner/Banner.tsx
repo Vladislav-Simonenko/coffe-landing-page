@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Banner.module.scss";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
+import { ScrollingEffect } from "@/components/organisms/ScrollingEffect/ScrollingEffect";
 
 interface IBannerProps {
   text: string;
@@ -42,23 +43,15 @@ export const Banner = (props: IBannerProps) => {
   const delay = 0.2;
 
   return (
-    <div ref={ref}>
-      <motion.div
-        animate={controls}
-        initial={{ opacity: 0, x: -5000 }}
-        transition={{ delay: inView ? 0.8 : 0, type: "ease-in" }}
-      >
-        <div id="pages" className={styles.bannerContainer}>
-          <Image
-            className={styles.bannerImage}
-            width={1920}
-            height={1080}
-            src={img}
-            alt={""}
-          />
-          <p className={styles.bannerText}>{text}</p>
-        </div>
-      </motion.div>
+    <div id="pages" className={styles.bannerContainer}>
+      <Image
+        className={styles.bannerImage}
+        width={1920}
+        height={1080}
+        src={img}
+        alt={""}
+      />
+      <p className={styles.bannerText}>{text}</p>
     </div>
   );
 };

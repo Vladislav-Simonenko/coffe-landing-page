@@ -33,7 +33,7 @@ export const CoffeItem = (props: ICoffeItemProps) => {
             opacity: 1,
             transition: {
               duration: 1,
-              delay: inView ? index : 0,
+              delay: 0,
             },
           });
           setAnimationStarted(true);
@@ -42,9 +42,6 @@ export const CoffeItem = (props: ICoffeItemProps) => {
       startAnimation();
     }
   }, [inView, controls, animationStarted]);
-
-  const maxDelay = 0.4;
-  const delay = Math.min(index * 1000, maxDelay);
 
   return (
     <div className={styles.coffeItemContainer}>
@@ -61,7 +58,6 @@ export const CoffeItem = (props: ICoffeItemProps) => {
           className={styles.productListPopular}
           style={{
             position: "relative",
-            transitionDelay: `${delay}ms`,
           }}
         >
           <div className={styles.CoffeItemRightSideBlock}>
