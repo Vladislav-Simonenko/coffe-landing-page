@@ -14,6 +14,7 @@ import {
   FollowUs,
 } from "@/components/organisms";
 import GreenBlog from "@/components/organisms/GreenBlog/GreenBlog";
+import { Loader } from "@/components/organisms/Loader/Loader";
 import { ScrollingEffect } from "@/components/organisms/ScrollingEffect/ScrollingEffect";
 import React, { useEffect, useState } from "react";
 
@@ -21,17 +22,17 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Симулируем загрузку данных или выполнение других длительных операций
     setTimeout(() => {
       setIsLoaded(true);
-    }, 2000); // Например, 2 секунды
+    });
   }, []);
+
   return isLoaded ? (
     <React.Fragment>
       <ScrollingEffect>
         <MainContentSlider />
       </ScrollingEffect>
-
+      <Loader />
       <ScrollingEffect>
         <AdvantagesDivider data={dividerText} />
         <Products />
@@ -85,9 +86,7 @@ export default function Home() {
       </ScrollingEffect>
     </React.Fragment>
   ) : (
-    <div style={{ width: "100vw", height: "100vh", background: "red" }}>
-      ЗАГРУЗКА
-    </div>
+    <Loader />
   );
 }
 
