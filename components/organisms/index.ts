@@ -11,3 +11,5 @@ export * from "./BlogMenu";
 export * from "./GreenBlog";
 export * from "./CoffeMenuList";
 export * from "./FollowUs";
+export * from "./ScrollingEffect";
+export * from "./Loader";

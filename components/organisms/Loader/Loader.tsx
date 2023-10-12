@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./Loader.module.scss";
@@ -5,44 +7,42 @@ import styles from "./Loader.module.scss";
 export const Loader = () => {
   return (
     <div className={styles.loaderContainer}>
-      <motion.div
-        className={styles.whiteBox}
+      <motion.svg
+        initial={{ opacity: 1 }}
         animate={{
-          width: 0,
+          opacity: 0,
           transition: {
-            duration: 0.1,
+            duration: 1,
             repeat: Infinity,
             repeatType: "reverse",
           },
         }}
-      ></motion.div>
-      <svg
         className={styles.loaderSvg}
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         viewBox="0.00 0.00 166.00 38.00"
       >
-        <g stroke-width="5.00" fill="none" stroke-linecap="butt">
+        <g strokeWidth="5.00" fill="none" strokeLinecap="butt">
           <path
             stroke="#171814"
-            stroke-opacity="0.737"
-            vector-effect="non-scaling-stroke"
+            strokeOpacity="0.737"
+            vectorEffect="non-scaling-stroke"
             d="
   M 11.44 23.46
   L 11.28 26.62"
           />
           <path
             stroke="#171814"
-            stroke-opacity="0.737"
-            vector-effect="non-scaling-stroke"
+            strokeOpacity="0.737"
+            vectorEffect="non-scaling-stroke"
             d="
   M 11.73 26.48
   L 12.17 25.32"
           />
           <path
             stroke="#171814"
-            stroke-opacity="0.737"
-            vector-effect="non-scaling-stroke"
+            strokeOpacity="0.737"
+            vectorEffect="non-scaling-stroke"
             d="
   M 151.66 20.68
   Q 151.37 21.41 152.14 21.26
@@ -427,7 +427,7 @@ export const Loader = () => {
           />
           <path
             fill="#090d06"
-            fill-opacity="0.471"
+            fillOpacity="0.471"
             d="
   M 11.44 23.46
   Q 11.32 25.58 12.17 25.32
@@ -439,7 +439,7 @@ export const Loader = () => {
         </g>
         <path
           fill="#090d06"
-          fill-opacity="0.471"
+          fillOpacity="0.471"
           d="
   M 151.66 20.68
   Q 151.92 20.00 152.75 20.26
@@ -448,7 +448,7 @@ export const Loader = () => {
   Q 151.37 21.41 151.66 20.68
   Z"
         />
-      </svg>
+      </motion.svg>
     </div>
   );
 };

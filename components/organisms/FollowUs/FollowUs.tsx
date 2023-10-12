@@ -8,7 +8,7 @@ export const FollowUs = () => {
       <div className={styles.followUsContent}>
         {coffeDataItem.map((item) => {
           return (
-            <div className={styles.followUsImageContainer}>
+            <div key={item.id} className={styles.followUsImageContainer}>
               <Image
                 className={styles.followUsImage}
                 src={item.img}

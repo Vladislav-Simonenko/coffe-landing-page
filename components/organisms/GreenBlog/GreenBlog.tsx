@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ActionButton } from "@/components/atoms";
 import styles from "./GreenBlog.module.scss";
 
-const GreenBlog = () => {
+export const GreenBlog = () => {
   return (
     <div className={styles.greenBlogContainer}>
       <div className={styles.greenBlogContent}>
@@ -26,8 +26,6 @@ const GreenBlog = () => {
     </div>
   );
 };
-
-export default GreenBlog;
 
 const titleText = "Barista Schools & Careers";
 

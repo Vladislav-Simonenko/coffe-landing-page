@@ -12,10 +12,10 @@ import {
   BlogMenu,
   CoffeMenuList,
   FollowUs,
+  ScrollingEffect,
+  Loader,
+  GreenBlog,
 } from "@/components/organisms";
-import GreenBlog from "@/components/organisms/GreenBlog/GreenBlog";
-import { Loader } from "@/components/organisms/Loader/Loader";
-import { ScrollingEffect } from "@/components/organisms/ScrollingEffect/ScrollingEffect";
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
@@ -26,13 +26,14 @@ export default function Home() {
       setIsLoaded(true);
     });
   }, []);
+  console.log(isLoaded);
 
   return isLoaded ? (
     <React.Fragment>
       <ScrollingEffect>
         <MainContentSlider />
       </ScrollingEffect>
-      <Loader />
+
       <ScrollingEffect>
         <AdvantagesDivider data={dividerText} />
         <Products />

@@ -1,1 +1,1 @@
-export * from "./Loader.module.scss";
+export * from "./Loader";
