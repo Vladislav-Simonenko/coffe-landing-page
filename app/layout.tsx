@@ -1,8 +1,9 @@
-import { Footer, Header } from "@/components/organisms";
+import { Footer, Header, Loader } from "@/components/organisms";
 import { Container } from "@/components/atoms";
 import type { Metadata } from "next";
 import Head from "next/head";
 import "./globals.scss";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -101,7 +102,9 @@ export default async function RootLayout({
       </Head>
       <body suppressHydrationWarning={DISABLE_HYDRATION_WARNINGS}>
         <Header />
-        <Container>{children}</Container>
+        <Suspense fallback={<Loader />}>
+          <Container>{children}</Container>
+        </Suspense>
         <Footer />
       </body>
     </html>
