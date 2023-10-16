@@ -6,16 +6,18 @@ import Image from "next/image";
 import styles from "./HeaderRightItems.module.scss";
 import { BurgerMenu, Logo } from "@/components/atoms";
 import { AnimatePresence, motion } from "framer-motion";
+import { useResize } from "@/libs";
 interface IHeaderRightItemsProps {
   isScreenLg: boolean;
   isOpen: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const HeaderRightItems = (props: IHeaderRightItemsProps) => {
-  const { isScreenLg, isOpen, setOpen } = props;
+export const HeaderRightItems = () => {
   const rotateDuration = 6;
   const rotation = 360;
+  const [isOpen, setOpen] = useState(false);
+  const { isScreenLg } = useResize();
 
   const rotationVariants = {
     initial: { rotate: 0 },

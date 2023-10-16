@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import styles from "./HeaderLeftItems.module.scss";
 import Link from "next/link";
+import { useResize } from "@/libs";
 
 export const HeaderLeftItems = () => {
-  return (
+  const { isScreenLg } = useResize();
+
+  return isScreenLg ? (
     <div className={styles.headerMenuLinks}>
       <Link className={styles.headerLink} href={"#home"}>
         Home
@@ -18,5 +23,5 @@ export const HeaderLeftItems = () => {
         Blog
       </Link>
     </div>
-  );
+  ) : null;
 };
