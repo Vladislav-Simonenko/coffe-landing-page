@@ -16,7 +16,18 @@ import {
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log(isLoaded);
+
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 5000);
+  }, []);
+
+  return isLoaded ? (
     <React.Fragment>
       <ScrollingEffect>
         <MainContentSlider />
@@ -72,6 +83,8 @@ export default function Home() {
         <FollowUs />
       </ScrollingEffect>
     </React.Fragment>
+  ) : (
+    <Loader />
   );
 }
 
