@@ -1,34 +1,14 @@
-"use client";
-
 import React from "react";
 import styles from "./FollowUs.module.scss";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 export const FollowUs = () => {
-  const staggerDuration = 0.3;
-
   return (
     <div className={styles.followUsContainer}>
       <div className={styles.followUsContent}>
-        {coffeDataItem.map((item, index) => {
-          const [ref, inView] = useInView({
-            triggerOnce: true,
-          });
-
+        {coffeDataItem.map((item) => {
           return (
-            <motion.div
-              ref={ref}
-              className={styles.followUsImageContainer}
-              key={item.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: inView ? 1 : 0 }}
-              transition={{
-                duration: 1,
-                delay: inView ? index * staggerDuration : 0,
-              }}
-            >
+            <div key={item.id} className={styles.followUsImageContainer}>
               <Image
                 className={styles.followUsImage}
                 src={item.img}
@@ -36,7 +16,7 @@ export const FollowUs = () => {
                 width={1920}
                 height={1080}
               />
-            </motion.div>
+            </div>
           );
         })}
       </div>

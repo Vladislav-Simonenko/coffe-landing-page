@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./TextDivider.module.scss";
-
 interface ITextDivider {
   text: string;
 }

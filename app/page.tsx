@@ -1,6 +1,7 @@
+"use client";
+
 import { AdvantagesDivider, Banner, TextDivider } from "@/components/atoms";
 import {
-  Contacts,
   ItemMenu,
   MainContentSlider,
   ItemList,
@@ -10,33 +11,79 @@ import {
   BlogMenu,
   CoffeMenuList,
   FollowUs,
+  ScrollingEffect,
+  Loader,
+  GreenBlog,
 } from "@/components/organisms";
-import GreenBlog from "@/components/organisms/GreenBlog/GreenBlog";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    setIsLoaded(true);
+  }, []);
+
+  return isLoaded ? (
     <React.Fragment>
-      <MainContentSlider />
-      <AdvantagesDivider data={dividerText} />
-      <Products />
-      <Banner text={bannerData.text} img={bannerData.img} />
-      <Rating />
-      {/* <Contacts /> */}
-      <TextDivider text={"the coffee that's right for you"} />
-      <ItemList data={coffeData} />
-      <ItemMenu />
-      <ReserveTable />
-      <TextDivider text={"Our awesome team"} />
-      <ItemList data={teamData} />
-      <BlogMenu />
-      <GreenBlog />
-      <TextDivider text={"Our trusted Supplies"} />
-      <ItemList data={suppliesData} />
-      <CoffeMenuList />
-      <TextDivider text={"Follow us for more"} />
-      <FollowUs />
+      <ScrollingEffect>
+        <MainContentSlider />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <AdvantagesDivider data={dividerText} />
+        <Products />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <Banner text={bannerData.text} img={bannerData.img} />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <Rating />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <TextDivider text={"the coffee that's right for you"} />
+        <ItemList data={coffeData} />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <ItemMenu />
+        <ReserveTable />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <TextDivider text={"Our awesome team"} />
+        <ItemList data={teamData} />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <BlogMenu />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <GreenBlog />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <TextDivider text={"Our trusted Supplies"} />
+        <ItemList data={suppliesData} />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <CoffeMenuList />
+      </ScrollingEffect>
+
+      <ScrollingEffect>
+        <TextDivider text={"Follow us for more"} />
+        <FollowUs />
+      </ScrollingEffect>
     </React.Fragment>
+  ) : (
+    <Loader />
   );
 }
 

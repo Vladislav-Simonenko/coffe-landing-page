@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     default: "Early Birds",
     template: "% Coffe",
   },
+  description: "Best Coffee Shop Ever",
   openGraph: {
     title: "Early Birds",
     description: "Best Coffee Shop Ever",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     locale: "en",
     images: [
       {
-        url: "/logo-black-1.svg",
+        url: "/coffe-cup.svg",
         width: 800,
         height: 600,
       },

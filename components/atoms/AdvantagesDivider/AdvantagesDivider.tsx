@@ -7,6 +7,7 @@ interface IAdvantagesDivider {
 
 export const AdvantagesDivider = (props: IAdvantagesDivider) => {
   const { data } = props;
+
   return (
     <div className={styles.dividerContainer}>
       {data.map((item, index) => (
