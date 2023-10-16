@@ -23,7 +23,9 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    setIsLoaded(true);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 5000);
   }, []);
 
   return isLoaded ? (
