@@ -1,10 +1,17 @@
 "use client";
+
 import React, { useState } from "react";
 import styles from "./ReserveTable.module.scss";
 import { Selector } from "@/components/molecules";
 
+interface IReservationInterface {
+  date: string;
+  time: string;
+  numberOfPeople: number
+}
+
 export const ReserveTable = () => {
-  const [reservation, setReservation] = useState<React.ReactNode>();
+  const [reservation, setReservation] = useState<IReservationInterface>();
 
   const handleReservationChange = (
     newReservation: React.SetStateAction<any>
@@ -19,13 +26,11 @@ export const ReserveTable = () => {
         <Selector onReservationChange={handleReservationChange} />
         {reservation && (
           <p className={styles.reserveDescriprion}>
-            the table was booked on {/* @ts-ignore */}
+            the table was booked on 
             {reservation?.date +
               " " +
-              //  @ts-ignore
               reservation?.time +
               ", for " +
-              //  @ts-ignore
               reservation?.numberOfPeople +
               " person "}
           </p>

@@ -2,7 +2,6 @@
 
 import { AdvantagesDivider, Banner, TextDivider } from "@/components/atoms";
 import {
-  Contacts,
   ItemMenu,
   MainContentSlider,
   ItemList,
@@ -22,11 +21,10 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoaded(true);
-    });
+    window.scrollTo(0, 0);
+
+    setIsLoaded(true);
   }, []);
-  console.log(isLoaded);
 
   return isLoaded ? (
     <React.Fragment>
@@ -46,8 +44,6 @@ export default function Home() {
       <ScrollingEffect>
         <Rating />
       </ScrollingEffect>
-
-      {/* <Contacts /> */}
 
       <ScrollingEffect>
         <TextDivider text={"the coffee that's right for you"} />

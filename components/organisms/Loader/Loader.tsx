@@ -1,22 +1,11 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
 import styles from "./Loader.module.scss";
 
 export const Loader = () => {
   return (
     <div className={styles.loaderContainer}>
-      <motion.svg
-        initial={{ opacity: 1 }}
-        animate={{
-          opacity: 0,
-          transition: {
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          },
-        }}
+      <svg
+        fill="red"
         className={styles.loaderSvg}
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -448,7 +437,13 @@ export const Loader = () => {
   Q 151.37 21.41 151.66 20.68
   Z"
         />
-      </motion.svg>
+      </svg>
+      <p className={styles.dotContainer}>
+        <span className={styles.loadingText}>Loading</span>
+        <span className={styles.dot}></span>
+        <span className={styles.dot}></span>
+        <span className={styles.dot}></span>
+      </p>
     </div>
   );
 };

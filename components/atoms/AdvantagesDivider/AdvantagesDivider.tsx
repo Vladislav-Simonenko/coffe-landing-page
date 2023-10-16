@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 import styles from "./AdvantagesDivider.module.scss";
 
 interface IAdvantagesDivider {

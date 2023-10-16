@@ -1,11 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Banner.module.scss";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import { ScrollingEffect } from "@/components/organisms/ScrollingEffect/ScrollingEffect";
 
 interface IBannerProps {
   text: string;
