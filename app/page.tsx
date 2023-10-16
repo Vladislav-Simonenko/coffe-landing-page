@@ -1,5 +1,3 @@
-"use client";
-
 import { AdvantagesDivider, Banner, TextDivider } from "@/components/atoms";
 import {
   ItemMenu,
@@ -18,18 +16,7 @@ import {
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    console.log(isLoaded);
-
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 5000);
-  }, []);
-
-  return isLoaded ? (
+  return (
     <React.Fragment>
       <ScrollingEffect>
         <MainContentSlider />
@@ -85,8 +72,6 @@ export default function Home() {
         <FollowUs />
       </ScrollingEffect>
     </React.Fragment>
-  ) : (
-    <Loader />
   );
 }
 
